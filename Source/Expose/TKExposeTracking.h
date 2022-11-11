@@ -22,7 +22,7 @@ typedef void (^TKExposeEventHandler)(UIView *view, TKExposeContext *expose, BOOL
 @property (nonatomic, assign) CGFloat exposeValidSizePercentage;
 
 /// 有效曝光时长（单位：毫秒）
-@property (nonatomic, assign) CGFloat exposeEffectiveTime;
+@property (nonatomic, assign) CGFloat exposeValidDuration;
 
 /// 是否过滤相同的TrackId，默认NO
 @property (nonatomic, assign) BOOL isFilterTrackId;

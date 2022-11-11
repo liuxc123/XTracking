@@ -133,8 +133,19 @@
         for (UIView *view in self.currentNeedExposeViews) {
             if (view.tk_isValidVisible) {
                 if(view.tk_exposeContext){
-                    TKExposeContext *expose = view.tk_exposeContext;
-                    [self sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                    if (self.exposeValidDuration > 0) { // 延时曝光
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.exposeValidDuration * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+                            if (view.tk_isValidVisible) {
+                                if (view.tk_exposeContext) {
+                                    TKExposeContext *expose = view.tk_exposeContext;
+                                    [self sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                                }
+                            }
+                        });
+                    } else {
+                        TKExposeContext *expose = view.tk_exposeContext;
+                        [self sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                    }
                 }
             } else {
                 [self._tmpPool addObject:view];
@@ -165,29 +176,6 @@
             handler(view, exposeContext, isInBackground);
         }
     }
-}
-
-- (BOOL)isValidExposureView:(UIView *)view {
-    if (!view) {
-        return NO;
-    }
-    BOOL isValidVisible = view.tk_isValidVisible;
-    BOOL isValidExposureTime = [self isValidExposureTime:view];
-    return isValidVisible && isValidExposureTime;
-}
-
-- (BOOL)isValidExposureTime:(UIView *)view {
-    if (self.exposeEffectiveTime > 0) {
-        if (view.tk_firstExposureTime < 1) {
-            view.tk_firstExposureTime = [[NSDate date] timeIntervalSince1970];
-            return NO;
-        }
-        NSInteger exposuerTime = ([[NSDate date] timeIntervalSince1970] * 1000 - view.tk_firstExposureTime * 1000);
-        if (exposuerTime < self.exposeEffectiveTime) {
-            return NO;
-        }
-    }
-    return YES;
 }
 
 @end

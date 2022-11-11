@@ -27,10 +27,10 @@
 }
 
 - (void)bindToControllerIfNeed:(UIViewController*)controller {
-    if(self.mode != TKControllerPageModeBindToController){
+    if (self.mode != TKControllerPageModeBindToController) {
         return;
     }
-    if(self.topPage != nil){
+    if (self.topPage != nil) {
         //已经绑定过了
         return;
     }
@@ -46,7 +46,7 @@
 
 - (void)push:(TKPageContext*)pageContext {
     TKPageContext *last = _pageStack.lastObject;
-    if(last){
+    if (last) {
         [self sendExit:last];
         if(self.mode != TKControllerPageModePushPop){
             [_pageStack removeAllObjects];
@@ -58,7 +58,7 @@
 
 - (void)pop {
     TKPageContext *page = self.topPage;
-    if(page){
+    if (page) {
         [self sendExit:page];
         [_pageStack removeObject:page];
     }
@@ -69,12 +69,12 @@
 }
 
 - (void)appear {
-    if(self.mode != TKControllerPageModeBindToController && !_hasDisappeared){
+    if (self.mode != TKControllerPageModeBindToController && !_hasDisappeared) {
         //防止第一次appear和push重复发送entry事件
         return;
     }
     TKPageContext *page = self.topPage;
-    if(page){
+    if (page) {
         [self sendEntry:page];
     }
 }
@@ -88,7 +88,7 @@
 }
 
 - (TKPageContext*)topPage {
-    if(_pageStack.count == 0){
+    if (_pageStack.count == 0) {
         return nil;
     }
     return _pageStack.lastObject;

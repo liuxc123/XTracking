@@ -25,10 +25,10 @@
 		F12A11A9291CC825000E46AD /* TKExposeContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11A8291CC825000E46AD /* TKExposeContext.m */; };
 		F12A11AC291CC8A3000E46AD /* TKExposeTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11AB291CC8A3000E46AD /* TKExposeTracking.m */; };
 		F12A11B2291CC9E8000E46AD /* UIView+TKExposeTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11B1291CC9E8000E46AD /* UIView+TKExposeTracking.m */; };
-		F12A11B6291CD6BA000E46AD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11B5291CD6BA000E46AD /* SecondViewController.m */; };
+		F1361BBF291E2875004A451C /* ExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1361BBE291E2875004A451C /* ExampleTableViewController.m */; };
+		F1361BC2291E2A4D004A451C /* Example1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1361BC1291E2A4D004A451C /* Example1ViewController.m */; };
+		F1361BC5291E2F14004A451C /* Example2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1361BC4291E2F14004A451C /* Example2ViewController.m */; };
 		F1D8356F291A00A10077E51C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D8356E291A00A10077E51C /* AppDelegate.m */; };
-		F1D83575291A00A10077E51C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D83574291A00A10077E51C /* ViewController.m */; };
-		F1D83578291A00A10077E51C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D83576291A00A10077E51C /* Main.storyboard */; };
 		F1D8357A291A00A10077E51C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D83579291A00A10077E51C /* Assets.xcassets */; };
 		F1D8357D291A00A10077E51C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D8357B291A00A10077E51C /* LaunchScreen.storyboard */; };
 		F1D83580291A00A10077E51C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D8357F291A00A10077E51C /* main.m */; };
@@ -76,14 +76,15 @@
 		F12A11B0291CC9E8000E46AD /* UIView+TKExposeTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TKExposeTracking.h"; sourceTree = "<group>"; };
 		F12A11B1291CC9E8000E46AD /* UIView+TKExposeTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKExposeTracking.m"; sourceTree = "<group>"; };
 		F12A11B3291CCD16000E46AD /* XTrackingExpose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTrackingExpose.h; sourceTree = "<group>"; };
-		F12A11B4291CD6BA000E46AD /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F12A11B5291CD6BA000E46AD /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		F1361BBD291E2875004A451C /* ExampleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewController.h; sourceTree = "<group>"; };
+		F1361BBE291E2875004A451C /* ExampleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewController.m; sourceTree = "<group>"; };
+		F1361BC0291E2A4D004A451C /* Example1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example1ViewController.h; sourceTree = "<group>"; };
+		F1361BC1291E2A4D004A451C /* Example1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example1ViewController.m; sourceTree = "<group>"; };
+		F1361BC3291E2F14004A451C /* Example2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example2ViewController.h; sourceTree = "<group>"; };
+		F1361BC4291E2F14004A451C /* Example2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example2ViewController.m; sourceTree = "<group>"; };
 		F1D8356A291A00A10077E51C /* XTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D8356D291A00A10077E51C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1D8356E291A00A10077E51C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F1D83573291A00A10077E51C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F1D83574291A00A10077E51C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F1D83577291A00A10077E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1D83579291A00A10077E51C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1D8357C291A00A10077E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D8357E291A00A10077E51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +164,17 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
+		F1361BB9291E2824004A451C /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				F1361BC0291E2A4D004A451C /* Example1ViewController.h */,
+				F1361BC1291E2A4D004A451C /* Example1ViewController.m */,
+				F1361BC3291E2F14004A451C /* Example2ViewController.h */,
+				F1361BC4291E2F14004A451C /* Example2ViewController.m */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
 		F1D83561291A00A10077E51C = {
 			isa = PBXGroup;
 			children = (
@@ -187,11 +199,9 @@
 			children = (
 				F1D8356D291A00A10077E51C /* AppDelegate.h */,
 				F1D8356E291A00A10077E51C /* AppDelegate.m */,
-				F1D83573291A00A10077E51C /* ViewController.h */,
-				F1D83574291A00A10077E51C /* ViewController.m */,
-				F12A11B4291CD6BA000E46AD /* SecondViewController.h */,
-				F12A11B5291CD6BA000E46AD /* SecondViewController.m */,
-				F1D83576291A00A10077E51C /* Main.storyboard */,
+				F1361BBD291E2875004A451C /* ExampleTableViewController.h */,
+				F1361BBE291E2875004A451C /* ExampleTableViewController.m */,
+				F1361BB9291E2824004A451C /* Pages */,
 				F1D83579291A00A10077E51C /* Assets.xcassets */,
 				F1D8357B291A00A10077E51C /* LaunchScreen.storyboard */,
 				F1D8357E291A00A10077E51C /* Info.plist */,
@@ -296,7 +306,6 @@
 			files = (
 				F1D8357D291A00A10077E51C /* LaunchScreen.storyboard in Resources */,
 				F1D8357A291A00A10077E51C /* Assets.xcassets in Resources */,
-				F1D83578291A00A10077E51C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,20 +358,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1361BBF291E2875004A451C /* ExampleTableViewController.m in Sources */,
 				F12A1189291C99D2000E46AD /* TKActionHelper.m in Sources */,
 				F12A11A2291CABA1000E46AD /* TKControllerPageAgent.m in Sources */,
 				F12A1186291C98E4000E46AD /* TKActionTracking.m in Sources */,
-				F12A11B6291CD6BA000E46AD /* SecondViewController.m in Sources */,
 				F12A119B291CA28F000E46AD /* UIAlertAction+TKActionTracking.m in Sources */,
 				F12A117A291C905C000E46AD /* TKPageContext.m in Sources */,
-				F1D83575291A00A10077E51C /* ViewController.m in Sources */,
 				F12A1198291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.m in Sources */,
 				F12A118F291C9E7A000E46AD /* UIApplication+TKActionTracking.m in Sources */,
 				F12A11A9291CC825000E46AD /* TKExposeContext.m in Sources */,
 				F12A117D291C95F1000E46AD /* TKClassHooker.m in Sources */,
+				F1361BC2291E2A4D004A451C /* Example1ViewController.m in Sources */,
 				F12A1195291CA104000E46AD /* UITabBarItem+TKActionTracking.m in Sources */,
 				F12A1192291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.m in Sources */,
 				F12A118C291C9C95000E46AD /* UIView+TKActionTracking.m in Sources */,
+				F1361BC5291E2F14004A451C /* Example2ViewController.m in Sources */,
 				F12A11A5291CADA1000E46AD /* UIViewController+TKPageTracking.m in Sources */,
 				F12A11AC291CC8A3000E46AD /* TKExposeTracking.m in Sources */,
 				F1D8356F291A00A10077E51C /* AppDelegate.m in Sources */,
@@ -376,14 +386,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F1D83576291A00A10077E51C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1D83577291A00A10077E51C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F1D8357B291A00A10077E51C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -517,7 +519,6 @@
 				INFOPLIST_FILE = XTracking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -545,7 +546,6 @@
 				INFOPLIST_FILE = XTracking/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

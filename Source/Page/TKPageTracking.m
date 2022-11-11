@@ -46,11 +46,11 @@
 
 - (TKPageContext* _Nullable)getPageContextFromController:(UIViewController*)controller {
     TKPageContext *page = controller.tk_page;
-    if(page != nil){
+    if (page != nil) {
         return page;
     }
     page = _classToPageDic[NSStringFromClass(controller.class)];
-    if(page != nil){
+    if (page != nil) {
         return page;
     }
     return nil;
@@ -65,7 +65,7 @@
     id lifeIndicator;
     while (lifeIndicator = [keyEnum nextObject]) {
         TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
-        if(handler){
+        if (handler) {
             handler(TKPageEventEntry, context);
         }
     }
@@ -76,7 +76,7 @@
     id lifeIndicator;
     while (lifeIndicator = [keyEnum nextObject]) {
         TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
-        if(handler){
+        if (handler) {
             handler(TKPageEventExit, context);
         }
     }

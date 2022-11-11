@@ -64,7 +64,7 @@ static const void *tk_modalParentControllerKey;
 
 - (TKControllerPageAgent*)tk_pageAgent{
     TKControllerPageAgent *agent = objc_getAssociatedObject(self, _cmd);
-    if(agent == nil){
+    if (agent == nil) {
         agent = [TKControllerPageAgent new];
         objc_setAssociatedObject(self, _cmd, agent, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }

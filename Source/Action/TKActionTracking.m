@@ -26,7 +26,7 @@
 
 - (instancetype)init {
     self = [super init];
-    if(self){
+    if (self) {
         _callbackTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory valueOptions:NSMapTableCopyIn];
     }
     return self;

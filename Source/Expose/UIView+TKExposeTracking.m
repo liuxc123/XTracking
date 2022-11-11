@@ -78,7 +78,7 @@
 
 #pragma mark - hook method
 
-- (void)tk_setContentOffset:(CGPoint)offset{
+- (void)tk_setContentOffset:(CGPoint)offset {
     CGPoint old = ((UIScrollView*)self).contentOffset;
     [self tk_setContentOffset:offset];
     if (!TKExposeTracking.shared.isEnabled || !self.tk_isExposeActive) return;
@@ -89,7 +89,7 @@
     }
 }
 
-- (void)tk_setFrame:(CGRect)frame{
+- (void)tk_setFrame:(CGRect)frame {
     CGRect old = self.frame;
     [self tk_setFrame:frame];
     if (!TKExposeTracking.shared.isEnabled || !self.tk_isExposeActive) return;
@@ -138,20 +138,20 @@
     [self _tk_didMoveToWindow];
 }
 
--(void)tk_willMoveToSuperview:(UIView *)newSuperview{
+- (void)tk_willMoveToSuperview:(UIView *)newSuperview {
     [self tk_willMoveToSuperview:newSuperview];
     if (!TKExposeTracking.shared.isEnabled) return;
-    if(newSuperview){
-        if(self.tk_isExposeActive){
-            if(self.superview && self.superview != newSuperview){
+    if (newSuperview) {
+        if (self.tk_isExposeActive) {
+            if (self.superview && self.superview != newSuperview) {
                 [self.superview tk_removeExposeSubview:self];
             }
             [newSuperview tk_addExposeSubview:self];
         }
     }
     else{
-        if(self.tk_isExposeActive){
-            if(self.superview){
+        if (self.tk_isExposeActive) {
+            if (self.superview) {
                 [self.superview tk_removeExposeSubview:self];
             }
         }
@@ -203,7 +203,7 @@
             offsetChanged = YES;
         }
     }
-    if (!offsetChanged){
+    if (!offsetChanged) {
         if (offsetOld.x != offsetNew.x) {
             if (fabs(floor(offsetOld.x) - floor(offsetNew.x)) >= 1.f) {
                 offsetChanged = YES;
@@ -265,7 +265,7 @@
 }
 
 - (void)tk_clearExposeKVO {
-    if(self.tk_kvo){
+    if (self.tk_kvo) {
         [self.tk_kvo unobserveAll];
         self.tk_kvo = nil;
     }
@@ -310,7 +310,7 @@
 
 - (void)tk_resetVisibleRect {
     CGRect visibleRect;
-    if(!self.window){
+    if (!self.window) {
         visibleRect = CGRectZero;
     }
     else{
@@ -332,15 +332,15 @@
     if (!self.superview) {
         if (self.clipsToBounds) {
            clipRect = CGRectZero;
-       } else {
+        } else {
            clipRect = CGRectMake(0, 0, CGFLOAT_MAX, CGFLOAT_MAX);
-       }
+        }
     } else {
         if (self.clipsToBounds) {
            clipRect = CGRectIntersection(self.superview.tk_clipRect, self.tk_visibleRect);
-       } else {
+        } else {
            clipRect = self.superview.tk_clipRect;
-       }
+        }
     }
     if (!CGRectEqualToRect(clipRect, self.tk_clipRect)) {
         self.tk_clipRect = clipRect;
@@ -370,9 +370,9 @@
 
 - (void)tk_resetIsExposeActive {
     BOOL isActive = self.tk_exposeContext || self.tk_exposeSubviews.count > 0;
-    if(self.tk_isExposeActive != isActive){
+    if (self.tk_isExposeActive != isActive) {
         self.tk_isExposeActive = isActive;
-        if(self.superview){
+        if (self.superview) {
             if (isActive) {
                 [self.superview tk_addExposeSubview:self];
             }
@@ -426,7 +426,7 @@
 
 - (NSHashTable<UIView *> *)tk_exposeSubviews{
     NSHashTable<UIView *> *views = objc_getAssociatedObject(self, _cmd);
-    if(!views){
+    if (!views) {
         views = [NSHashTable weakObjectsHashTable];
         objc_setAssociatedObject(self, @selector(tk_exposeSubviews), views, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
@@ -444,7 +444,7 @@
 - (void)setTk_isHidden:(BOOL)tk_isHidden {
     objc_setAssociatedObject(self, @selector(tk_isHidden), @(tk_isHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     @synchronized (self.tk_exposeSubviews) {
-        for(UIView *view in self.tk_exposeSubviews){
+        for (UIView *view in self.tk_exposeSubviews) {
             [view tk_superViewHiddenDidChanged];
         }
     }
@@ -461,7 +461,7 @@
 - (void)setTk_isAlpha0:(BOOL)tk_isAlpha0 {
     objc_setAssociatedObject(self, @selector(tk_isAlpha0), @(tk_isAlpha0), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     @synchronized (self.tk_exposeSubviews) {
-        for(UIView *view in self.tk_exposeSubviews){
+        for (UIView *view in self.tk_exposeSubviews) {
             [view tk_superViewAlphaDidChanged];
         }
     }
@@ -474,7 +474,7 @@
 - (void)setTk_layoutTrigger:(NSInteger)tk_layoutTrigger {
     objc_setAssociatedObject(self, @selector(tk_layoutTrigger), @(tk_layoutTrigger), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     @synchronized (self.tk_exposeSubviews) {
-        for(UIView *view in self.tk_exposeSubviews){
+        for (UIView *view in self.tk_exposeSubviews) {
             [view tk_superViewLayoutTriggerDidChanged];
         }
     }
@@ -503,7 +503,7 @@
 - (void)setTk_clipRect:(CGRect)tk_clipRect {
     objc_setAssociatedObject(self, @selector(tk_clipRect), @(tk_clipRect), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     @synchronized (self.tk_exposeSubviews) {
-        for(UIView *view in self.tk_exposeSubviews){
+        for (UIView *view in self.tk_exposeSubviews) {
             [view tk_superViewClipRectDidChanged];
         }
     }
@@ -518,11 +518,11 @@
     
     if (!TKExposeTracking.shared.isEnabled) return;
     [self tk_resetIsExposeActive];
-    if (self.tk_isExposeActive){
+    if (self.tk_isExposeActive) {
         self.tk_firstExposureTime = 0;
         // ignore后再决定是否add，相当于刷新一下
         [[TKExposeTracking shared] ignoreView:self];
-        if(self.tk_isValidVisible){
+        if (self.tk_isValidVisible) {
             [[TKExposeTracking shared] addNeedExposeView:self];
         }
     }
