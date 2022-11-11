@@ -7,8 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F62E5A20A2EC0749AA50A45 /* Pods_XTracking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95293262F3F4AC6424A9771E /* Pods_XTracking.framework */; };
+		F12A117A291C905C000E46AD /* TKPageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1179291C905C000E46AD /* TKPageContext.m */; };
+		F12A117D291C95F1000E46AD /* TKClassHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A117C291C95F1000E46AD /* TKClassHooker.m */; };
+		F12A1181291C9719000E46AD /* TKActionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1180291C9719000E46AD /* TKActionContext.m */; };
+		F12A1186291C98E4000E46AD /* TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1185291C98E4000E46AD /* TKActionTracking.m */; };
+		F12A1189291C99D2000E46AD /* TKActionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1188291C99D2000E46AD /* TKActionHelper.m */; };
+		F12A118C291C9C95000E46AD /* UIView+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A118B291C9C95000E46AD /* UIView+TKActionTracking.m */; };
+		F12A118F291C9E7A000E46AD /* UIApplication+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A118E291C9E7A000E46AD /* UIApplication+TKActionTracking.m */; };
+		F12A1192291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1191291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.m */; };
+		F12A1195291CA104000E46AD /* UITabBarItem+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1194291CA104000E46AD /* UITabBarItem+TKActionTracking.m */; };
+		F12A1198291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A1197291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.m */; };
+		F12A119B291CA28F000E46AD /* UIAlertAction+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A119A291CA28F000E46AD /* UIAlertAction+TKActionTracking.m */; };
+		F12A119F291CA9B3000E46AD /* TKPageTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A119E291CA9B3000E46AD /* TKPageTracking.m */; };
+		F12A11A2291CABA1000E46AD /* TKControllerPageAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11A1291CABA1000E46AD /* TKControllerPageAgent.m */; };
+		F12A11A5291CADA1000E46AD /* UIViewController+TKPageTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11A4291CADA1000E46AD /* UIViewController+TKPageTracking.m */; };
+		F12A11A9291CC825000E46AD /* TKExposeContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11A8291CC825000E46AD /* TKExposeContext.m */; };
+		F12A11AC291CC8A3000E46AD /* TKExposeTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11AB291CC8A3000E46AD /* TKExposeTracking.m */; };
+		F12A11B2291CC9E8000E46AD /* UIView+TKExposeTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11B1291CC9E8000E46AD /* UIView+TKExposeTracking.m */; };
+		F12A11B6291CD6BA000E46AD /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12A11B5291CD6BA000E46AD /* SecondViewController.m */; };
 		F1D8356F291A00A10077E51C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D8356E291A00A10077E51C /* AppDelegate.m */; };
-		F1D83572291A00A10077E51C /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D83571291A00A10077E51C /* SceneDelegate.m */; };
 		F1D83575291A00A10077E51C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D83574291A00A10077E51C /* ViewController.m */; };
 		F1D83578291A00A10077E51C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D83576291A00A10077E51C /* Main.storyboard */; };
 		F1D8357A291A00A10077E51C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1D83579291A00A10077E51C /* Assets.xcassets */; };
@@ -17,11 +35,52 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50E12FF6197FCD9342A7B1B1 /* Pods-XTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTracking.debug.xcconfig"; path = "Target Support Files/Pods-XTracking/Pods-XTracking.debug.xcconfig"; sourceTree = "<group>"; };
+		95293262F3F4AC6424A9771E /* Pods_XTracking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C27B35E0541715B4B61E04E8 /* Pods-XTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XTracking.release.xcconfig"; path = "Target Support Files/Pods-XTracking/Pods-XTracking.release.xcconfig"; sourceTree = "<group>"; };
+		F12A1178291C905C000E46AD /* TKPageContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKPageContext.h; sourceTree = "<group>"; };
+		F12A1179291C905C000E46AD /* TKPageContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKPageContext.m; sourceTree = "<group>"; };
+		F12A117B291C95F1000E46AD /* TKClassHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKClassHooker.h; sourceTree = "<group>"; };
+		F12A117C291C95F1000E46AD /* TKClassHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKClassHooker.m; sourceTree = "<group>"; };
+		F12A117F291C9719000E46AD /* TKActionContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKActionContext.h; sourceTree = "<group>"; };
+		F12A1180291C9719000E46AD /* TKActionContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKActionContext.m; sourceTree = "<group>"; };
+		F12A1183291C982E000E46AD /* ITKActionObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ITKActionObject.h; sourceTree = "<group>"; };
+		F12A1184291C98E4000E46AD /* TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKActionTracking.h; sourceTree = "<group>"; };
+		F12A1185291C98E4000E46AD /* TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKActionTracking.m; sourceTree = "<group>"; };
+		F12A1187291C99D2000E46AD /* TKActionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKActionHelper.h; sourceTree = "<group>"; };
+		F12A1188291C99D2000E46AD /* TKActionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKActionHelper.m; sourceTree = "<group>"; };
+		F12A118A291C9C95000E46AD /* UIView+TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TKActionTracking.h"; sourceTree = "<group>"; };
+		F12A118B291C9C95000E46AD /* UIView+TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKActionTracking.m"; sourceTree = "<group>"; };
+		F12A118D291C9E7A000E46AD /* UIApplication+TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+TKActionTracking.h"; sourceTree = "<group>"; };
+		F12A118E291C9E7A000E46AD /* UIApplication+TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+TKActionTracking.m"; sourceTree = "<group>"; };
+		F12A1190291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+TKActionTracking.h"; sourceTree = "<group>"; };
+		F12A1191291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+TKActionTracking.m"; sourceTree = "<group>"; };
+		F12A1193291CA104000E46AD /* UITabBarItem+TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+TKActionTracking.h"; sourceTree = "<group>"; };
+		F12A1194291CA104000E46AD /* UITabBarItem+TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+TKActionTracking.m"; sourceTree = "<group>"; };
+		F12A1196291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TKActionTracking.h"; sourceTree = "<group>"; };
+		F12A1197291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TKActionTracking.m"; sourceTree = "<group>"; };
+		F12A1199291CA28F000E46AD /* UIAlertAction+TKActionTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+TKActionTracking.h"; sourceTree = "<group>"; };
+		F12A119A291CA28F000E46AD /* UIAlertAction+TKActionTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+TKActionTracking.m"; sourceTree = "<group>"; };
+		F12A119C291CA3D9000E46AD /* XTrackingAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTrackingAction.h; sourceTree = "<group>"; };
+		F12A119D291CA9B3000E46AD /* TKPageTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKPageTracking.h; sourceTree = "<group>"; };
+		F12A119E291CA9B3000E46AD /* TKPageTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKPageTracking.m; sourceTree = "<group>"; };
+		F12A11A0291CABA1000E46AD /* TKControllerPageAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKControllerPageAgent.h; sourceTree = "<group>"; };
+		F12A11A1291CABA1000E46AD /* TKControllerPageAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKControllerPageAgent.m; sourceTree = "<group>"; };
+		F12A11A3291CADA1000E46AD /* UIViewController+TKPageTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKPageTracking.h"; sourceTree = "<group>"; };
+		F12A11A4291CADA1000E46AD /* UIViewController+TKPageTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKPageTracking.m"; sourceTree = "<group>"; };
+		F12A11A6291CC5B3000E46AD /* XTrackingPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTrackingPage.h; sourceTree = "<group>"; };
+		F12A11A7291CC825000E46AD /* TKExposeContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKExposeContext.h; sourceTree = "<group>"; };
+		F12A11A8291CC825000E46AD /* TKExposeContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKExposeContext.m; sourceTree = "<group>"; };
+		F12A11AA291CC8A3000E46AD /* TKExposeTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKExposeTracking.h; sourceTree = "<group>"; };
+		F12A11AB291CC8A3000E46AD /* TKExposeTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKExposeTracking.m; sourceTree = "<group>"; };
+		F12A11B0291CC9E8000E46AD /* UIView+TKExposeTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+TKExposeTracking.h"; sourceTree = "<group>"; };
+		F12A11B1291CC9E8000E46AD /* UIView+TKExposeTracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+TKExposeTracking.m"; sourceTree = "<group>"; };
+		F12A11B3291CCD16000E46AD /* XTrackingExpose.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTrackingExpose.h; sourceTree = "<group>"; };
+		F12A11B4291CD6BA000E46AD /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		F12A11B5291CD6BA000E46AD /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		F1D8356A291A00A10077E51C /* XTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D8356D291A00A10077E51C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1D8356E291A00A10077E51C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F1D83570291A00A10077E51C /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		F1D83571291A00A10077E51C /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		F1D83573291A00A10077E51C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F1D83574291A00A10077E51C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F1D83577291A00A10077E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -29,6 +88,7 @@
 		F1D8357C291A00A10077E51C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1D8357E291A00A10077E51C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1D8357F291A00A10077E51C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F1D83587291A022D0077E51C /* XTracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTracking.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +96,81 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F62E5A20A2EC0749AA50A45 /* Pods_XTracking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E51D24127510B56A28DFBF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50E12FF6197FCD9342A7B1B1 /* Pods-XTracking.debug.xcconfig */,
+				C27B35E0541715B4B61E04E8 /* Pods-XTracking.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9CE9AE33AF60E2148C6EBBAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95293262F3F4AC6424A9771E /* Pods_XTracking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F12A1177291C902F000E46AD /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				F12A1178291C905C000E46AD /* TKPageContext.h */,
+				F12A1179291C905C000E46AD /* TKPageContext.m */,
+				F12A11A0291CABA1000E46AD /* TKControllerPageAgent.h */,
+				F12A11A1291CABA1000E46AD /* TKControllerPageAgent.m */,
+				F12A11A3291CADA1000E46AD /* UIViewController+TKPageTracking.h */,
+				F12A11A4291CADA1000E46AD /* UIViewController+TKPageTracking.m */,
+				F12A119D291CA9B3000E46AD /* TKPageTracking.h */,
+				F12A119E291CA9B3000E46AD /* TKPageTracking.m */,
+				F12A11A6291CC5B3000E46AD /* XTrackingPage.h */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		F12A117E291C9665000E46AD /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				F12A117F291C9719000E46AD /* TKActionContext.h */,
+				F12A1180291C9719000E46AD /* TKActionContext.m */,
+				F12A1183291C982E000E46AD /* ITKActionObject.h */,
+				F12A1184291C98E4000E46AD /* TKActionTracking.h */,
+				F12A1185291C98E4000E46AD /* TKActionTracking.m */,
+				F12A1187291C99D2000E46AD /* TKActionHelper.h */,
+				F12A1188291C99D2000E46AD /* TKActionHelper.m */,
+				F12A118A291C9C95000E46AD /* UIView+TKActionTracking.h */,
+				F12A118B291C9C95000E46AD /* UIView+TKActionTracking.m */,
+				F12A118D291C9E7A000E46AD /* UIApplication+TKActionTracking.h */,
+				F12A118E291C9E7A000E46AD /* UIApplication+TKActionTracking.m */,
+				F12A1190291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.h */,
+				F12A1191291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.m */,
+				F12A1193291CA104000E46AD /* UITabBarItem+TKActionTracking.h */,
+				F12A1194291CA104000E46AD /* UITabBarItem+TKActionTracking.m */,
+				F12A1196291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.h */,
+				F12A1197291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.m */,
+				F12A1199291CA28F000E46AD /* UIAlertAction+TKActionTracking.h */,
+				F12A119A291CA28F000E46AD /* UIAlertAction+TKActionTracking.m */,
+				F12A119C291CA3D9000E46AD /* XTrackingAction.h */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
 		F1D83561291A00A10077E51C = {
 			isa = PBXGroup;
 			children = (
+				F1D83586291A02200077E51C /* Source */,
 				F1D8356C291A00A10077E51C /* XTracking */,
 				F1D8356B291A00A10077E51C /* Products */,
+				1E51D24127510B56A28DFBF9 /* Pods */,
+				9CE9AE33AF60E2148C6EBBAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,10 +187,10 @@
 			children = (
 				F1D8356D291A00A10077E51C /* AppDelegate.h */,
 				F1D8356E291A00A10077E51C /* AppDelegate.m */,
-				F1D83570291A00A10077E51C /* SceneDelegate.h */,
-				F1D83571291A00A10077E51C /* SceneDelegate.m */,
 				F1D83573291A00A10077E51C /* ViewController.h */,
 				F1D83574291A00A10077E51C /* ViewController.m */,
+				F12A11B4291CD6BA000E46AD /* SecondViewController.h */,
+				F12A11B5291CD6BA000E46AD /* SecondViewController.m */,
 				F1D83576291A00A10077E51C /* Main.storyboard */,
 				F1D83579291A00A10077E51C /* Assets.xcassets */,
 				F1D8357B291A00A10077E51C /* LaunchScreen.storyboard */,
@@ -76,6 +200,41 @@
 			path = XTracking;
 			sourceTree = "<group>";
 		};
+		F1D83586291A02200077E51C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				F12A117E291C9665000E46AD /* Action */,
+				F12A1177291C902F000E46AD /* Page */,
+				F1D8358C291A02850077E51C /* Expose */,
+				F1D83588291A02320077E51C /* Core */,
+				F1D83587291A022D0077E51C /* XTracking.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		F1D83588291A02320077E51C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F12A117B291C95F1000E46AD /* TKClassHooker.h */,
+				F12A117C291C95F1000E46AD /* TKClassHooker.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F1D8358C291A02850077E51C /* Expose */ = {
+			isa = PBXGroup;
+			children = (
+				F12A11A7291CC825000E46AD /* TKExposeContext.h */,
+				F12A11A8291CC825000E46AD /* TKExposeContext.m */,
+				F12A11AA291CC8A3000E46AD /* TKExposeTracking.h */,
+				F12A11AB291CC8A3000E46AD /* TKExposeTracking.m */,
+				F12A11B0291CC9E8000E46AD /* UIView+TKExposeTracking.h */,
+				F12A11B1291CC9E8000E46AD /* UIView+TKExposeTracking.m */,
+				F12A11B3291CCD16000E46AD /* XTrackingExpose.h */,
+			);
+			path = Expose;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +242,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1D83583291A00A10077E51C /* Build configuration list for PBXNativeTarget "XTracking" */;
 			buildPhases = (
+				724AFDD1A9784C49D126F4B2 /* [CP] Check Pods Manifest.lock */,
 				F1D83566291A00A10077E51C /* Sources */,
 				F1D83567291A00A10077E51C /* Frameworks */,
 				F1D83568291A00A10077E51C /* Resources */,
+				BA3ABED713D711BAA6AFE3A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,15 +302,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		724AFDD1A9784C49D126F4B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XTracking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA3ABED713D711BAA6AFE3A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTracking/Pods-XTracking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XTracking/Pods-XTracking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XTracking/Pods-XTracking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1D83566291A00A10077E51C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F12A1189291C99D2000E46AD /* TKActionHelper.m in Sources */,
+				F12A11A2291CABA1000E46AD /* TKControllerPageAgent.m in Sources */,
+				F12A1186291C98E4000E46AD /* TKActionTracking.m in Sources */,
+				F12A11B6291CD6BA000E46AD /* SecondViewController.m in Sources */,
+				F12A119B291CA28F000E46AD /* UIAlertAction+TKActionTracking.m in Sources */,
+				F12A117A291C905C000E46AD /* TKPageContext.m in Sources */,
 				F1D83575291A00A10077E51C /* ViewController.m in Sources */,
+				F12A1198291CA22A000E46AD /* UIBarButtonItem+TKActionTracking.m in Sources */,
+				F12A118F291C9E7A000E46AD /* UIApplication+TKActionTracking.m in Sources */,
+				F12A11A9291CC825000E46AD /* TKExposeContext.m in Sources */,
+				F12A117D291C95F1000E46AD /* TKClassHooker.m in Sources */,
+				F12A1195291CA104000E46AD /* UITabBarItem+TKActionTracking.m in Sources */,
+				F12A1192291C9FD7000E46AD /* UIGestureRecognizer+TKActionTracking.m in Sources */,
+				F12A118C291C9C95000E46AD /* UIView+TKActionTracking.m in Sources */,
+				F12A11A5291CADA1000E46AD /* UIViewController+TKPageTracking.m in Sources */,
+				F12A11AC291CC8A3000E46AD /* TKExposeTracking.m in Sources */,
 				F1D8356F291A00A10077E51C /* AppDelegate.m in Sources */,
+				F12A1181291C9719000E46AD /* TKActionContext.m in Sources */,
+				F12A119F291CA9B3000E46AD /* TKPageTracking.m in Sources */,
+				F12A11B2291CC9E8000E46AD /* UIView+TKExposeTracking.m in Sources */,
 				F1D83580291A00A10077E51C /* main.m in Sources */,
-				F1D83572291A00A10077E51C /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +507,7 @@
 		};
 		F1D83584291A00A10077E51C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50E12FF6197FCD9342A7B1B1 /* Pods-XTracking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -299,6 +520,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +535,7 @@
 		};
 		F1D83585291A00A10077E51C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C27B35E0541715B4B61E04E8 /* Pods-XTracking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +548,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

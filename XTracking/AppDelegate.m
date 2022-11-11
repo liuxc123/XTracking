@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "XTracking.h"
 
 @interface AppDelegate ()
 
@@ -13,28 +14,31 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[TKActionTracking shared] registActionEventLifeIndicator:self handler:^(id  _Nonnull sender, TKActionContext * _Nonnull action) {
+        NSString *trackingId = action.trackingId; //用户声明的trackingId
+        id userData = action.userData; //用户声明的业务数据
+        NSLog(@"Action Tracking: %@, %@", trackingId, userData);
+    }];
+    
+    [[TKExposeTracking shared] registExposeEventLifeIndicator:self handler:^(UIView * _Nonnull view, TKExposeContext * _Nonnull expose, BOOL isInBackground) {
+        NSString *trackingId = expose.trackingId; //用户声明的trackingId
+        id userData = expose.userData; //用户声明的业务数据
+        NSLog(@"Expose Tracking: %@, %@", trackingId, userData);
+    }];
+    
+    [[TKExposeTracking shared] startExposeTracking];
+    
+    [[TKPageTracking shared] registPageEventLifeIndicator:self handler:^(TKPageEvent event, TKPageContext * _Nonnull page) {
+        NSString *trackingId = page.pageId; //用户声明的trackingId
+        id userData = page.userData; //用户声明的业务数据
+        NSDate *entryTime = [NSDate dateWithTimeIntervalSince1970:page.pageEntryTime.doubleValue]; //页面进入时间
+        NSLog(@"Page Tracking: %@, %@, %@, %@", trackingId, userData, [entryTime description], event == TKPageEventEntry ? @"Entry" : @"Exit");
+    }];
+    
     return YES;
 }
-
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
-
 
 @end
