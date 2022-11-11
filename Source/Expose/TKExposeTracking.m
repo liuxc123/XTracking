@@ -132,7 +132,7 @@
         
         for (UIView *view in self.currentNeedExposeViews) {
             if (view.tk_isValidVisible) {
-                if(view.tk_exposeContext){
+                if (view.tk_exposeContext) {
                     if (self.exposeValidDuration > 0) { // 延时曝光
                         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.exposeValidDuration * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
                             if (view.tk_isValidVisible) {

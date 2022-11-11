@@ -6,6 +6,7 @@
 //
 
 #import "Example1ViewController.h"
+#import "Example2ViewController.h"
 #import "XTracking.h"
 
 @interface Example1UITableViewCell : UITableViewCell
@@ -14,10 +15,6 @@
 
 @implementation Example1UITableViewCell
 
-- (void)dealloc {
-    NSLog(@"Example1UITableViewCell dealloc");
-}
-
 @end
 
 @interface Example1ViewController ()
@@ -25,6 +22,10 @@
 @end
 
 @implementation Example1ViewController
+
+- (void)dealloc {
+    NSLog(@"Example1ViewController dealloc");
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +38,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.rowHeight = 100;
     
+    // 页面标记
+    self.tk_page = [[TKPageContext alloc] initWithPageId:@"Example1ViewController" userData:@{@"name": @"Example1"}];
+
     // 开启监控
     [[TKExposeTracking shared] registExposeEventLifeIndicator:self handler:^(UIView * _Nonnull view, TKExposeContext * _Nonnull expose, BOOL isInBackground) {
         Example1UITableViewCell *cell = (Example1UITableViewCell *)view;
@@ -93,15 +97,16 @@
     
     // 曝光标记
     cell.tk_exposeContext = [[TKExposeContext alloc] initWithTrackingId:[NSString stringWithFormat:@"Example2%@", @(indexPath.row)] userData:@{@"row": @(indexPath.row)}];
-        
+    
+    // 事件标记
+    cell.tk_actionContext = [[TKActionContext alloc] initWithTrackingId:[NSString stringWithFormat:@"Example2%@", @(indexPath.row)] userData:@{@"row": @(indexPath.row)}];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController *emptyVC = [[UIViewController alloc] init];
-    emptyVC.title = @"测试空界面";
-    emptyVC.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController pushViewController:emptyVC animated:YES];
+    Example2ViewController *vc = [[Example2ViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"Tracking Page";
+    self.title = @"Example2";
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 页面标记
