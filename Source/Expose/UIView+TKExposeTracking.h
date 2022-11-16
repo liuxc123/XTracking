@@ -27,8 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 当前view是否在屏幕上有效可见（显示且显示面积/view面积 > 最小显示比例）
 @property (nonatomic, assign, readonly) BOOL tk_isValidVisible;
-/// 当前视图第一次曝光时间
-@property (nonatomic, assign, readwrite) NSTimeInterval tk_firstExposureTime;
 
 @end
 

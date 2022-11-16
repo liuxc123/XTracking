@@ -357,7 +357,7 @@
     //  计算validVisible
     CGFloat viewVisibleNeedArea = self.frame.size.width * self.frame.size.height * [TKExposeTracking shared].exposeValidSizePercentage;
     CGFloat viewShowArea = self.tk_visibleRect.size.width * self.tk_visibleRect.size.height;
-    BOOL isValidVisible = isVisible && (viewShowArea > viewVisibleNeedArea);
+    BOOL isValidVisible = isVisible && (viewShowArea >= viewVisibleNeedArea);
     if (self.tk_isValidVisible != isValidVisible) {
         self.tk_isValidVisible = isValidVisible;
         if (isValidVisible) {
@@ -562,14 +562,6 @@
 
 - (void)setTk_isVisible:(BOOL)tk_isVisible {
     objc_setAssociatedObject(self, @selector(tk_isVisible), @(tk_isVisible), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSTimeInterval)tk_firstExposureTime {
-    return [objc_getAssociatedObject(self, _cmd) doubleValue];
-}
-
-- (void)setTk_firstExposureTime:(NSTimeInterval)tk_firstExposureTime {
-    objc_setAssociatedObject(self, @selector(tk_firstExposureTime), @(tk_firstExposureTime), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (FBKVOController *)tk_kvo {

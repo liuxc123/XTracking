@@ -57,7 +57,7 @@
     }];
     
     [TKExposeTracking shared].exposeValidDuration = 3000; // 曝光时间3s
-    [TKExposeTracking shared].exposeValidSizePercentage = 0.9; // 90%显示
+    [TKExposeTracking shared].exposeValidSizePercentage = 1.0; // 90%显示
     [[TKExposeTracking shared] startExposeTracking]; // 开启曝光监控
 }
 

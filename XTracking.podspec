@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = 'https://github.com/liuxc123/XTracking'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jinsikui' => 'lxc_work@126.com' }
+  s.author           = { 'liuxc123' => 'lxc_work@126.com' }
   s.source           = { :git => 'https://github.com/liuxc123/XTracking.git'}
   s.ios.deployment_target = '9.0'
   

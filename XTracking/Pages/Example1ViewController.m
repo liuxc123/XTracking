@@ -37,9 +37,6 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.rowHeight = 100;
-    
-    // 页面标记
-    self.tk_page = [[TKPageContext alloc] initWithPageId:@"Example1ViewController" userData:@{@"name": @"Example1"}];
 
     // 开启监控
     [[TKExposeTracking shared] registExposeEventLifeIndicator:self handler:^(UIView * _Nonnull view, TKExposeContext * _Nonnull expose, BOOL isInBackground) {
@@ -52,6 +49,10 @@
     // TODO: 不复用的时候，reloadData 的时候把 view 给刷走了，那么新数据和旧数据会走 show 和 hide 吗？
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
 }
