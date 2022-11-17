@@ -355,7 +355,7 @@
     self.tk_isVisible = isVisible;
     
     //  计算validVisible
-    CGFloat viewVisibleNeedArea = self.frame.size.width * self.frame.size.height * [TKExposeTracking shared].exposeValidSizePercentage;
+    CGFloat viewVisibleNeedArea = self.frame.size.width * self.frame.size.height * [TKExposeTracking shared].exposeAreaRate;
     CGFloat viewShowArea = self.tk_visibleRect.size.width * self.tk_visibleRect.size.height;
     BOOL isValidVisible = isVisible && (viewShowArea >= viewVisibleNeedArea);
     if (self.tk_isValidVisible != isValidVisible) {
@@ -519,7 +519,6 @@
     if (!TKExposeTracking.shared.isEnabled) return;
     [self tk_resetIsExposeActive];
     if (self.tk_isExposeActive) {
-        self.tk_firstExposureTime = 0;
         // ignore后再决定是否add，相当于刷新一下
         [[TKExposeTracking shared] ignoreView:self];
         if (self.tk_isValidVisible) {

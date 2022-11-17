@@ -49,7 +49,7 @@
         _lastExposeViews = [NSHashTable weakObjectsHashTable];
         _currentNeedExposeViews = [NSHashTable weakObjectsHashTable];
         __tmpPool = [NSHashTable new];
-        _exposeValidSizePercentage = .5;
+        _exposeAreaRate = .5;
         _isFilterTrackId = NO;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];

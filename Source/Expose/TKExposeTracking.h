@@ -19,10 +19,7 @@ typedef void (^TKExposeEventHandler)(UIView *view, TKExposeContext *expose, BOOL
 @property (nonatomic, assign, readonly) BOOL isEnabled;
 
 /// 用户设置，view展示多少以上视为曝光，默认0.5 (0~1, 0为展示即曝光, 1为必须全部展示才视为曝光)
-@property (nonatomic, assign) CGFloat exposeValidSizePercentage;
-
-/// 有效曝光时长（单位：毫秒）
-@property (nonatomic, assign) CGFloat exposeValidDuration;
+@property (nonatomic, assign) CGFloat exposeAreaRate;
 
 /// 是否过滤相同的TrackId，默认NO
 @property (nonatomic, assign) BOOL isFilterTrackId;

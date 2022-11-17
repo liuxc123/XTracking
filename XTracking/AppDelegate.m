@@ -56,8 +56,7 @@
         NSLog(@"Expose Tracking: %@, %@", trackingId, userData);
     }];
     
-    [TKExposeTracking shared].exposeValidDuration = 3000; // 曝光时间3s
-    [TKExposeTracking shared].exposeValidSizePercentage = 1.0; // 90%显示
+    [TKExposeTracking shared].exposeAreaRate = 1.0; // 90%显示
     [[TKExposeTracking shared] startExposeTracking]; // 开启曝光监控
 }
 
