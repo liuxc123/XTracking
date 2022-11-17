@@ -101,10 +101,10 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"cell: %p", cell];
     
     // 曝光标记
-    cell.tk_exposeContext = [[TKExposeContext alloc] initWithTrackingId:[NSString stringWithFormat:@"Example2%@", @(indexPath.row)] userData:@{@"row": @(indexPath.row)}];
+    cell.tk_exposeContext = [[TKExposeContext alloc] initWithTrackingId:[NSString stringWithFormat:@"Example1%@", @(indexPath.row)] userData:@{@"row": @(indexPath.row)}];
     
     // 事件标记
-    cell.tk_actionContext = [[TKActionContext alloc] initWithTrackingId:[NSString stringWithFormat:@"Example2%@", @(indexPath.row)] userData:@{@"row": @(indexPath.row)}];
+    cell.tk_actionContext = [[TKActionContext alloc] initWithTrackingId:[NSString stringWithFormat:@"Example1%@", @(indexPath.row)] userData:@{@"row": @(indexPath.row)}];
     
     return cell;
 }

@@ -116,6 +116,7 @@
 
 - (void)fireDisplayLink {
     @synchronized (self) {
+        
         // 检测上次打点的view是否还在继续显示，如果已经不显示了，从lastExposeViews数组中移除
         for (UIView *view in self.lastExposeViews) {
             if (!view.tk_isValidVisible) {
