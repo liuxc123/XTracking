@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 当前view是否在屏幕上有效可见（显示且显示面积/view面积 > 最小显示比例）
 @property (nonatomic, assign, readonly) BOOL tk_isValidVisible;
 
+/// 设置view延时曝光
+- (void)tk_setupExposeDelay:(NSTimeInterval)duration completeBlock:(nullable void (^)(void))completeBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

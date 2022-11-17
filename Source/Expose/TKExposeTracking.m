@@ -133,8 +133,15 @@
         for (UIView *view in self.currentNeedExposeViews) {
             if (view.tk_isValidVisible) {
                 if (view.tk_exposeContext) {
-                    TKExposeContext *expose = view.tk_exposeContext;
-                    [self sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                    if (self.exposeDuration > 0) {
+                        [view tk_setupExposeDelay:self.exposeDuration completeBlock:^{
+                            TKExposeContext *expose = view.tk_exposeContext;
+                            [[TKExposeTracking shared] sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                        }];
+                    } else {
+                        TKExposeContext *expose = view.tk_exposeContext;
+                        [[TKExposeTracking shared] sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                    }
                 }
             } else {
                 [self._tmpPool addObject:view];

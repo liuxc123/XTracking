@@ -44,6 +44,8 @@
 @property (nonatomic, strong, readonly) NSHashTable<UIView *> *tk_exposeSubviews;
 ///  监听self.layer.hidden/opacity/masksToBounds属性的改变
 @property (nonatomic, strong) FBKVOController *tk_kvo;
+///  曝光计时器
+@property (nonatomic, strong) NSTimer *tk_exposeTimer;
 
 @end
 
@@ -271,6 +273,24 @@
     }
 }
 
+- (void)tk_clearExposeTimer {
+    if (self.tk_exposeTimer) {
+        [self.tk_exposeTimer invalidate];
+        self.tk_exposeTimer = nil;
+    }
+}
+
+- (void)tk_setupExposeDelay:(NSTimeInterval)duration completeBlock:(nullable void (^)(void))completeBlock {
+    [self tk_clearExposeTimer];
+    
+    self.tk_exposeTimer = [NSTimer timerWithTimeInterval:duration repeats:NO block:^(NSTimer * _Nonnull timer) {
+        completeBlock();
+        [self tk_clearExposeTimer];
+    }];
+
+    [[NSRunLoop mainRunLoop] addTimer:self.tk_exposeTimer forMode:NSRunLoopCommonModes];
+}
+
 - (void)tk_setupExposeKVO {
     // 先释放之前的观察
     [self tk_clearExposeKVO];
@@ -386,6 +406,7 @@
         }
         else{
             [self tk_clearExposeKVO];
+            [self tk_clearExposeTimer];
         }
     }
 }
@@ -569,6 +590,14 @@
 
 - (void)setTk_kvo:(FBKVOController *)tk_kvo {
     objc_setAssociatedObject(self, @selector(tk_kvo), tk_kvo, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSTimer *)tk_exposeTimer {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setTk_exposeTimer:(NSTimer * _Nonnull)tk_exposeTimer {
+    objc_setAssociatedObject(self, @selector(tk_exposeTimer), tk_exposeTimer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

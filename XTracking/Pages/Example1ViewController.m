@@ -15,6 +15,10 @@
 
 @implementation Example1UITableViewCell
 
+- (void)dealloc {
+    NSLog(@"Example1UITableViewCell dealloc");
+}
+
 @end
 
 @interface Example1ViewController ()
