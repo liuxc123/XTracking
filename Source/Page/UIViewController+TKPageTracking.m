@@ -25,7 +25,7 @@ static const void *tk_modalParentControllerKey;
         newSEL = @selector(tk_viewWillDisappear:);
         originMethod = class_getInstanceMethod(self, originSEL);
         newMethod = class_getInstanceMethod(self, newSEL);
-        method_exchangeImplementations(originMethod, newMethod);\
+        method_exchangeImplementations(originMethod, newMethod);
         
         originSEL = @selector(presentViewController:animated:completion:);
         newSEL = @selector(tk_presentViewController:animated:completion:);
@@ -62,7 +62,7 @@ static const void *tk_modalParentControllerKey;
     objc_setAssociatedObject(self, @selector(tk_page), tk_page, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (TKControllerPageAgent*)tk_pageAgent{
+- (TKControllerPageAgent*)tk_pageAgent {
     TKControllerPageAgent *agent = objc_getAssociatedObject(self, _cmd);
     if (agent == nil) {
         agent = [TKControllerPageAgent new];
