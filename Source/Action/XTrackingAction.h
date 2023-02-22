@@ -1,7 +1,7 @@
 
 
-#ifndef xTrackingAction_h
-#define xTrackingAction_h
+#ifndef XTrackingAction_h
+#define XTrackingAction_h
 
 #import "TKActionTracking.h"
 #import "TKActionContext.h"
@@ -11,4 +11,4 @@
 #import "UITabBarItem+TKActionTracking.h"
 #import "UIView+TKActionTracking.h"
 
-#endif /* xTrackingAction_h */
+#endif /* XTrackingAction_h */
