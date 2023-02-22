@@ -1,20 +1,11 @@
-//
-//  UIAlertAction+TKActionTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "UIAlertAction+TKActionTracking.h"
-
 #import "TKClassHooker.h"
 #import "TKActionHelper.h"
-
 #import <objc/runtime.h>
 
 @implementation UIAlertAction (TKActionTracking)
-
-#pragma mark - load
 
 + (void)load {
     [TKClassHooker exchangeClassOriginMethod:@selector(actionWithTitle:style:handler:) newMethod:@selector(tk_actionWithTitle:style:handler:) mclass:[UIAlertAction class]];

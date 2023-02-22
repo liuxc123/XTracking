@@ -1,9 +1,4 @@
-//
-//  UITabBarItem+TKActionTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "UITabBarItem+TKActionTracking.h"
 
@@ -15,11 +10,14 @@
 
 #pragma mark - ITKActionObject
 
-- (void)tk_setActionContextWithTrackingId:(NSString *)trackingId userData:(id)userData {
-    [TKActionHelper setActionContextToObject:self trackingId:trackingId userData:userData];
+- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId
+                                 userData:(id _Nullable)userData {
+    [TKActionHelper setActionContextToObject:self
+                                  trackingId:(NSString*_Nullable)trackingId
+                                    userData:(id _Nullable)userData];
 }
 
-- (void)tk_clearActionContext {
+- (void)tk_clearActionContext{
     [TKActionHelper clearActionContextForObject:self];
 }
 

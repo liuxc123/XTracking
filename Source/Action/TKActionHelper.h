@@ -1,9 +1,4 @@
-//
-//  TKActionHelper.h
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import <UIKit/UIKit.h>
 
@@ -16,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)reportActionObjectIfNeed:(id)object;
 
 + (void)setActionContextToObject:(id)object
-                      trackingId:(NSString* _Nullable)trackingId
+                      trackingId:(NSString*_Nullable)trackingId
                         userData:(id _Nullable)userData;
 
 + (void)clearActionContextForObject:(id)object;

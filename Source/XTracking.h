@@ -1,9 +1,4 @@
-//
-//  XTracking.h
-//  XTracking
-//
-//  Created by liuxc on 2022/11/8.
-//
+
 
 #ifndef XTracking_h
 #define XTracking_h
@@ -28,4 +23,4 @@
 #import "UITabBarItem+TKActionTracking.h"
 #import "UIView+TKActionTracking.h"
 
-#endif /* XTracking_h */
+#endif

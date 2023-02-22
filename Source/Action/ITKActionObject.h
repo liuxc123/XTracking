@@ -1,9 +1,4 @@
-//
-//  ITKActionObject.h
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import <UIKit/UIKit.h>
 #import "TKActionContext.h"
@@ -13,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 代表抽象出来的要跟踪用户action的控件，比如UIButton，UIGestureRecognizer
 @protocol ITKActionObject <NSObject>
 
-typedef TKActionContext* _Nullable (^TKActionContextProvider)(id<ITKActionObject> _Nonnull actionObject);
+typedef TKActionContext*_Nullable (^TKActionContextProvider)(id<ITKActionObject> _Nonnull actionObject);
 
 @property (nonatomic, strong) TKActionContext * _Nullable tk_actionContext;
 
@@ -22,12 +17,14 @@ typedef TKActionContext* _Nullable (^TKActionContextProvider)(id<ITKActionObject
 /// 如果你在provider返回空，则不通知该事件
 @property (nonatomic, copy) TKActionContextProvider _Nullable tk_actionContextProvider;
 
-/// 设置“tk_actionContext”
-- (void)tk_setActionContextWithTrackingId:(NSString * _Nullable)trackingId
+
+/// 方便用户的快捷方法
+- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId
                                  userData:(id _Nullable)userData;
 
 - (void)tk_clearActionContext;
 
 @end
+
 
 NS_ASSUME_NONNULL_END

@@ -1,9 +1,4 @@
-//
-//  UIView+TKActionTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "UIView+TKActionTracking.h"
 
@@ -16,11 +11,14 @@
 
 #pragma mark - ITKActionObject
 
-- (void)tk_setActionContextWithTrackingId:(NSString *)trackingId userData:(id)userData {
-    [TKActionHelper setActionContextToObject:self trackingId:trackingId userData:userData];
+- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId
+                                 userData:(id _Nullable)userData {
+    [TKActionHelper setActionContextToObject:self
+                                  trackingId:(NSString*_Nullable)trackingId
+                                    userData:(id _Nullable)userData];
 }
 
-- (void)tk_clearActionContext {
+- (void)tk_clearActionContext{
     [TKActionHelper clearActionContextForObject:self];
 }
 
@@ -44,16 +42,12 @@
 
 @implementation UITableView (TKActionTracking)
 
-#pragma mark - load
-
 + (void)load {
     NSString *selPart1 = @"_userSelectRowAtPending";
     NSString *selPart2 = @"SelectionIndexPath:";
     SEL selectMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@", selPart1, selPart2]);
     [TKClassHooker exchangeOriginMethod:selectMethod newMethod:@selector(tk_userSelectRowAtPendingSelectionIndexPath:) mclass:[UITableView class]];
 }
-
-#pragma mark - hook method
 
 - (void)tk_userSelectRowAtPendingSelectionIndexPath:(NSIndexPath *)indexPath {
     [self tk_userSelectRowAtPendingSelectionIndexPath:indexPath];
@@ -65,16 +59,12 @@
 
 @implementation UICollectionView (TKActionTracking)
 
-#pragma mark - load
-
 + (void)load {
     NSString *selPart1 = @"_userSelectItem";
     NSString *selPart2 = @"AtIndexPath:";
     SEL selectMethod = NSSelectorFromString([NSString stringWithFormat:@"%@%@", selPart1, selPart2]);
     [TKClassHooker exchangeOriginMethod:selectMethod newMethod:@selector(tk_userSelectItemAtIndexPath:) mclass:[UICollectionView class]];
 }
-
-#pragma mark - hook method
 
 - (void)tk_userSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self tk_userSelectItemAtIndexPath:indexPath];

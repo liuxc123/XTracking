@@ -1,9 +1,4 @@
-//
-//  TKClassHooker.h
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import <Foundation/Foundation.h>
 

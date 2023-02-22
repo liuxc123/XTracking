@@ -1,16 +1,11 @@
-//
-//  TKClassHooker.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "TKClassHooker.h"
 #import <objc/runtime.h>
 
 @implementation TKClassHooker
 
-+ (void)exchangeOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL mclass:(Class)mclass {
++ (void)exchangeOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL mclass:(Class)mclass{
     Method originalMethod = class_getInstanceMethod(mclass, originSEL);
     Method newMethod = class_getInstanceMethod(mclass, newSEL);
     
@@ -27,7 +22,7 @@
     }
 }
 
-+ (void)exchangeClassOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL mclass:(Class)mclass {
++ (void)exchangeClassOriginMethod:(SEL)originSEL newMethod:(SEL)newSEL mclass:(Class)mclass{
     mclass = object_getClass(mclass);
     
     Method originalMethod = class_getClassMethod(mclass, originSEL);

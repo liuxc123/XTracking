@@ -1,15 +1,9 @@
-//
-//  UIBarButtonItem+TKActionTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "UIBarButtonItem+TKActionTracking.h"
+#import <objc/runtime.h>
 
 #import "TKActionHelper.h"
-
-#import <objc/runtime.h>
 
 @implementation UIBarButtonItem (TKActionTracking)
 

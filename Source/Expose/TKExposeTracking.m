@@ -1,12 +1,8 @@
-//
-//  TKExposeTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "TKExposeTracking.h"
 #import "UIView+TKExposeTracking.h"
+
 
 @interface TKExposeTracking()
 
@@ -22,6 +18,8 @@
  */
 /// 上一帧已经在曝光的views
 @property (nonatomic, strong) NSHashTable<UIView *> *lastExposeViews;
+/// 上一帧已经在曝光的TrackIds
+@property (nonatomic, strong) NSSet<NSString *> *lastExposeTrackIds;
 /// 下一帧需要曝光打点的views
 @property (nonatomic, strong) NSHashTable<UIView *> *currentNeedExposeViews;
 /// 临时存储一些数据
@@ -33,7 +31,7 @@
 
 @implementation TKExposeTracking
 
-+ (instancetype)shared {
++(instancetype)shared{
     static TKExposeTracking *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -42,22 +40,23 @@
     return instance;
 }
 
-- (instancetype)init {
+-(instancetype)init{
     self = [super init];
     if(self){
         _callbackTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory valueOptions:NSMapTableCopyIn];
         _lastExposeViews = [NSHashTable weakObjectsHashTable];
+        _lastExposeTrackIds = [NSSet set];
         _currentNeedExposeViews = [NSHashTable weakObjectsHashTable];
         __tmpPool = [NSHashTable new];
-        _exposeAreaRate = .5;
-        _isFilterTrackId = NO;
+        _exposeValidSizePercentage = .9;
+        _isFilterTrackId = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
     }
     return self;
 }
 
-- (void)appWillEnterForeground:(NSNotification*)notification {
+- (void)appWillEnterForeground:(NSNotification*)notification{
     self.isInBackground = false;
     // 将lastExposeViews合至currentNeedExposeViews，lastExposeViews清空
     @synchronized (self) {
@@ -116,7 +115,7 @@
 
 - (void)fireDisplayLink {
     @synchronized (self) {
-        
+
         // 检测上次打点的view是否还在继续显示，如果已经不显示了，从lastExposeViews数组中移除
         for (UIView *view in self.lastExposeViews) {
             if (!view.tk_isValidVisible) {
@@ -130,18 +129,17 @@
         [self.lastExposeViews minusHashTable:self._tmpPool];
         [self.currentNeedExposeViews minusHashTable:self._tmpPool];
         [self._tmpPool removeAllObjects];
-        
+                
         for (UIView *view in self.currentNeedExposeViews) {
             if (view.tk_isValidVisible) {
-                if (view.tk_exposeContext) {
-                    if (self.exposeDuration > 0) {
-                        [view tk_setupExposeDelay:self.exposeDuration completeBlock:^{
-                            TKExposeContext *expose = view.tk_exposeContext;
-                            [[TKExposeTracking shared] sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
-                        }];
+                if(view.tk_exposeContext){
+                    TKExposeContext *expose = view.tk_exposeContext;
+                    if (self.isFilterTrackId) { // 过滤相同的TrackId
+                        if (![self containTrackId:expose.trackingId]) {
+                            [self sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                        }
                     } else {
-                        TKExposeContext *expose = view.tk_exposeContext;
-                        [[TKExposeTracking shared] sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
+                        [self sendExposeView:view exposeContext:expose isInBackground:self.isInBackground];
                     }
                 }
             } else {
@@ -173,6 +171,15 @@
             handler(view, exposeContext, isInBackground);
         }
     }
+}
+
+- (BOOL)containTrackId:(NSString *)trackId {
+    for (UIView *view in self.lastExposeViews) {
+        if (view.tk_exposeContext && [view.tk_exposeContext.trackingId isEqualToString:trackId]) {
+            return YES;
+        }
+    }
+    return NO;
 }
 
 @end

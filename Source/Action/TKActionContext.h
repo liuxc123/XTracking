@@ -1,11 +1,5 @@
-//
-//  TKActionContext.h
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
 
-#import <Foundation/Foundation.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,12 +7,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface TKActionContext : NSObject
 
 /// 控件的跟踪Id，由用户使用，xTracking并不依赖这个属性
-@property (nonatomic, copy) NSString *_Nullable trackingId;
-@property (nonatomic, strong) id _Nullable userData;
+@property(nonatomic,copy) NSString *_Nullable trackingId;
+@property(nonatomic,strong) id _Nullable userData;
 
-
-- (instancetype)initWithTrackingId:(NSString * _Nullable)trackingId
-                          userData:(id _Nullable)userData;
+-(instancetype)initWithTrackingId:(NSString*_Nullable)trackingId
+                         userData:(id _Nullable)userData;
 
 @end
 

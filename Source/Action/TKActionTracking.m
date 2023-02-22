@@ -1,9 +1,4 @@
-//
-//  TKActionTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "TKActionTracking.h"
 
@@ -15,7 +10,7 @@
 
 @implementation TKActionTracking
 
-+ (instancetype)shared {
++(instancetype)shared{
     static TKActionTracking *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -24,9 +19,9 @@
     return instance;
 }
 
-- (instancetype)init {
+-(instancetype)init{
     self = [super init];
-    if (self) {
+    if(self){
         _callbackTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory valueOptions:NSMapTableCopyIn];
     }
     return self;

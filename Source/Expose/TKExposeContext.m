@@ -1,18 +1,14 @@
-//
-//  TKExposeContext.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
 
+
+#import <Foundation/Foundation.h>
 #import "TKExposeContext.h"
 
 @implementation TKExposeContext
 
-- (instancetype)initWithTrackingId:(NSString * _Nullable)trackingId
-                          userData:(id _Nullable)userData {
+-(instancetype)initWithTrackingId:(NSString*_Nullable)trackingId
+                         userData:(id _Nullable)userData{
     self = [super init];
-    if (self) {
+    if(self){
         self.trackingId = trackingId;
         self.userData = userData;
     }

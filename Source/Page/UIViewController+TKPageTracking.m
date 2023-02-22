@@ -1,18 +1,15 @@
-//
-//  UIViewController+TKPageTracking.m
-//  XTracking
-//
-//  Created by liuxc on 2022/11/10.
-//
+
 
 #import "UIViewController+TKPageTracking.h"
 #import <objc/runtime.h>
 
+
+
 static const void *tk_modalParentControllerKey;
 
-@implementation UIViewController (TKPageTracking)
+@implementation UIViewController(TKPageTracking)
 
-+ (void)load {
++(void)load{
     static dispatch_once_t once_token;
     dispatch_once(&once_token,  ^{
         SEL originSEL = @selector(viewWillAppear:);
@@ -25,7 +22,7 @@ static const void *tk_modalParentControllerKey;
         newSEL = @selector(tk_viewWillDisappear:);
         originMethod = class_getInstanceMethod(self, originSEL);
         newMethod = class_getInstanceMethod(self, newSEL);
-        method_exchangeImplementations(originMethod, newMethod);
+        method_exchangeImplementations(originMethod, newMethod);\
         
         originSEL = @selector(presentViewController:animated:completion:);
         newSEL = @selector(tk_presentViewController:animated:completion:);
@@ -41,15 +38,15 @@ static const void *tk_modalParentControllerKey;
     });
 }
 
-- (void)tk_viewWillAppear:(BOOL)animated {
-    if (self.tk_pageAgent.mode == TKControllerPageModeBindToController){
+-(void)tk_viewWillAppear:(BOOL)animated{
+    if(self.tk_pageAgent.mode == TKControllerPageModeBindToController){
         [self.tk_pageAgent bindToControllerIfNeed:self];
     }
     [self.tk_pageAgent appear];
     [self tk_viewWillAppear:animated];
 }
 
-- (void)tk_viewWillDisappear:(BOOL)animated {
+-(void)tk_viewWillDisappear:(BOOL)animated{
     [self.tk_pageAgent disappear];
     [self tk_viewWillDisappear:animated];
 }
@@ -62,14 +59,15 @@ static const void *tk_modalParentControllerKey;
     objc_setAssociatedObject(self, @selector(tk_page), tk_page, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (TKControllerPageAgent*)tk_pageAgent {
+- (TKControllerPageAgent*)tk_pageAgent{
     TKControllerPageAgent *agent = objc_getAssociatedObject(self, _cmd);
-    if (agent == nil) {
+    if(agent == nil){
         agent = [TKControllerPageAgent new];
         objc_setAssociatedObject(self, _cmd, agent, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return agent;
 }
+
 
 - (void)tk_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
     [self tk_presentViewController:viewControllerToPresent animated:flag completion:completion];
