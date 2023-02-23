@@ -28,7 +28,7 @@
 		F1361BC1291E2A4D004A451C /* Example1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example1ViewController.m; sourceTree = "<group>"; };
 		F1361BC3291E2F14004A451C /* Example2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Example2ViewController.h; sourceTree = "<group>"; };
 		F1361BC4291E2F14004A451C /* Example2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Example2ViewController.m; sourceTree = "<group>"; };
-		F173867529A614C900127144 /* XTracking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTracking.podspec; sourceTree = "<group>"; };
+		F173867529A614C900127144 /* XTracking.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = XTracking.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F1D8356A291A00A10077E51C /* XTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D8356D291A00A10077E51C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1D8356E291A00A10077E51C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };

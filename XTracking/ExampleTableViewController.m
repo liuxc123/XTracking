@@ -52,10 +52,8 @@
         cell.detailTextLabel.text = @"进入页面监控";
     }
     
-    // 事件监控
-    [cell setTk_actionContext:[[TKActionContext alloc] initWithTrackingId:cell.textLabel.text userData:@{
-        @"indexPath.row": @(indexPath.row),
-    }]];
+    // 点击事件监控
+    [cell setTk_actionContext:[[TKActionContext alloc] initWithTrackingId:cell.textLabel.text userData:@{@"indexPath.row": @(indexPath.row),}]];
 
     return cell;
 }
