@@ -7,63 +7,179 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019AA62CC23128518A30ADD977B51147 /* XTrackingAction.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F0E9194C268536FCC4E837EA3D9702 /* XTrackingAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01CF3ED4B4F6901A4B4573268A7364B2 /* XTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = D906CC8FF9DBFAF3AF65E5C5ECF7944D /* XTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03B26D383878A2F740CC694A491BA2B1 /* UIViewController+TKPageTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = F86890A2987DF3A0B1624F27B327C966 /* UIViewController+TKPageTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08C5289AFDE250963C836A9179469D74 /* UIAlertAction+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 073CF85B3425ED780F3C295141FFBFF0 /* UIAlertAction+TKActionTracking.m */; };
+		097F35BF5249E8FCDB3BFDCA161F50E4 /* TKClassHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F83730B1FBDC86EEED8091505D6360 /* TKClassHooker.m */; };
+		109E21569073938F4119AA410C065CD9 /* TKActionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9205BED4128754E3664EB8D22763FC53 /* TKActionHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1CE5C69625FFD5C4E2693E01876553B3 /* UIAlertAction+TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = F6B5BA69B0AE603A2A8C07E5C220E98B /* UIAlertAction+TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23E805D4AB01CEFC9CEE92097373EBFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 		287A7A7F92D4586945DFE45BC81DC609 /* KVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 590565EFA674898392EFD7E5E68DD13D /* KVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F92C39A68FE66C5222EDB860C60F236 /* Pods-XTracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEA184AFF96449F46F019AC28FF733F7 /* Pods-XTracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B1544FE5630C4145231FD4C21FD2B9F /* UIView+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 567947B04C9B6949AB1118E97FCE819E /* UIView+TKActionTracking.m */; };
+		47930A3CF4719ADE6567A6410F362771 /* Pods-XTracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDC517ECFD2C990C68F3E67EA8CF33F /* Pods-XTracking-dummy.m */; };
+		4867DEB0263E66E7FB2B8FC92F6E63CE /* TKPageTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5461F506DCC79CBB4130ED7B982595FF /* TKPageTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B526FBB5AF9784808725A8A849E4BD /* TKExposeContext.m in Sources */ = {isa = PBXBuildFile; fileRef = AE72184B36A06963CFADCC9E5DF9BCCD /* TKExposeContext.m */; };
+		4E3522A82CB6F30D48D02AE895E702BB /* TKExposeTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = E4F174D112EE3B92ADBEE471C9E65332 /* TKExposeTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F9888E1C971CF4EDE359CA5953B5A4D /* UIApplication+TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AD69A99F734D1273220AABD1EA03263 /* UIApplication+TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5430F6C3E859EB14F4B7AC0924F6940F /* UIGestureRecognizer+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3B016ED2B7C1D236385AA5F3B83846 /* UIGestureRecognizer+TKActionTracking.m */; };
 		561168BDE155FA7E57A48961E0DF8D51 /* KVOController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F05CDBF9737F6A5325E0949C559D96E7 /* KVOController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7252322A9777E6B8E3D1A12F8E8378CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5EA5DB3EC71DDCAB03E32AE85A32F0AE /* TKPageTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A80C142B4BF0792D513826918A9D8C /* TKPageTracking.m */; };
+		62B26018847E419AC4D482C3F97BFF6E /* TKControllerPageAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = CFE82D14466532E2A245833D1C4C7765 /* TKControllerPageAgent.m */; };
+		6A2150CA540D7B6FEA197310465FE72E /* UIGestureRecognizer+TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = CD0EDAD8C9D257EF47DA3C1680AB0F64 /* UIGestureRecognizer+TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6ACD01979CCB33BEA4C138C00C0E88F0 /* TKControllerPageAgent.h in Headers */ = {isa = PBXBuildFile; fileRef = D572CFD7373AF7E4DA8DB90E6FA1546D /* TKControllerPageAgent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74BC5006EEA0A5F7BE9CD643CF856871 /* ITKActionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = BA26C38A6B80D2A4D2C44B77FC96E186 /* ITKActionObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		764D89AB60F374016B611BE5C1F2E920 /* UIApplication+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC0C14BE88D649F4F3A59C42EA7728E /* UIApplication+TKActionTracking.m */; };
+		78D80BC471ED603BE1C568CBDCBFA4AC /* TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 460284CC9FCB764331FD8706ABAC1CB2 /* TKActionTracking.m */; };
+		85236342C68646E764F597955D5756C4 /* UIView+TKExposeTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C716BE4D264DB88E58D19DDA0D1BD1 /* UIView+TKExposeTracking.m */; };
+		8BC2A7B4D03D982D10EE327F5379ECF0 /* TKActionContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 10D2E6120F8D9EE1D5E314718E139DA6 /* TKActionContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9189D1238AC482E7F99DF0D0067076C0 /* UIView+TKExposeTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 21ACE470F481D43491189502DE2887D5 /* UIView+TKExposeTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		931182C62787557AE3137D7B81951ABD /* XTracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8E1761BA978000045F49C16CB7C5A3 /* XTracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9881C16D7C395B4C33EC8B7C16AA1A14 /* Pods-XTracking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEA184AFF96449F46F019AC28FF733F7 /* Pods-XTracking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98ED9FCBB8AB3B76F792E8A75D0421B3 /* KVOController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9F948D71767372BB492EA41C972847 /* KVOController-dummy.m */; };
 		A05DB2FB1D83C0D2421A24F161B885AA /* FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = 18C3212C0404C1E75A9A108D08BC6B09 /* FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B3F5061CC2253E90AC9A4ADB43F09D57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A49F614896A2D7635BC859F3AA68E5D0 /* UIBarButtonItem+TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = AFAF8D5B31002E9DB7034581B94DE2F4 /* UIBarButtonItem+TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B13B22010A687BE956D8047BC4CE7A61 /* TKExposeContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DE23F9F4A459EA8594C337A141C42BF /* TKExposeContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B19FDF814D3F9F9F5960FF803881F49F /* UIViewController+TKPageTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E92EA52A6CCC5CB5C2B7F7BFE8DEA93 /* UIViewController+TKPageTracking.m */; };
+		B3F5061CC2253E90AC9A4ADB43F09D57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		B90540E54DBD03FE65FA76C6464566D3 /* XTrackingExpose.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A3D5A663701D5F3130E5FE8C4E77AE /* XTrackingExpose.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BD451A88AA4CD20A24C5471AF0D06896 /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8E1A3A5A6D67E7B1670D61DC2B03852 /* FBKVOController.m */; };
-		E20ED3E84760A3E401C6442425DC8774 /* Pods-XTracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CDDC517ECFD2C990C68F3E67EA8CF33F /* Pods-XTracking-dummy.m */; };
+		C3D5627B1EDB97236B53F5FD9A8AD659 /* TKClassHooker.h in Headers */ = {isa = PBXBuildFile; fileRef = FA0A1593337CDA5554D7AF9CC822C616 /* TKClassHooker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C75AF9DF74C712AE7AC67E079B0D3682 /* TKExposeTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D536FDEF54AC47CCF823DB10E77441 /* TKExposeTracking.m */; };
+		C937818101059F7AE1A6E632379BF99E /* TKActionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 854360C9B0C26C74399463466191190C /* TKActionHelper.m */; };
+		CBACD5ED7CF10F331EF2E2B6FBABFDE5 /* UIBarButtonItem+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = C72DF7AAB40C46E2B60C009F58BF8BAD /* UIBarButtonItem+TKActionTracking.m */; };
+		CE4015B3248A082A8B53F4B3480A6F88 /* XTracking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B60DA8F51975677367321A32A19322 /* XTracking-dummy.m */; };
+		E2BB433728C95334C6EC5A65352A229D /* UIView+TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = F295B121C3998CCE53769573957A5C90 /* UIView+TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E2E40F9E3E6DC39422199424A0B8B07D /* TKPageContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CA8E84AC0D7E38C24C2531DFEFF160D /* TKPageContext.m */; };
+		E719218E236AA7858E6DC1023FC619FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		E732A38602D433895D4806565C7464BC /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2DDCD06FE07830A05F6215378AD489 /* NSObject+FBKVOController.m */; };
+		EC9BF141D855E098AB8C43A80C334727 /* UITabBarItem+TKActionTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = 211EBAB7C1BE4BE447B0380A0B00B213 /* UITabBarItem+TKActionTracking.m */; };
+		ECBD3DA237989D95C933B2231C2F4EBA /* TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = E477CF44332BFF4FD39FC10903B1782B /* TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE456AB6440C5501BD381B1DBA9F3F63 /* UITabBarItem+TKActionTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B52A42B570F3EB0A0D95AC48BA1BEFF /* UITabBarItem+TKActionTracking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEEEEEC1D1D4830F87FA82758C302858 /* TKActionContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C6AF4BC9AFEFF586E6344D895A326C /* TKActionContext.m */; };
+		EEF041EBB723C7223FC0CBA2A5912B3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		EFC356DA33229A22DF7F58EA44E23949 /* XTrackingPage.h in Headers */ = {isa = PBXBuildFile; fileRef = 0037405FDC8C1A9C643965103326516A /* XTrackingPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F80997D973AB18030069FDF8E6AC64D7 /* TKPageContext.h in Headers */ = {isa = PBXBuildFile; fileRef = BB04BE54F6AD22107370DD2B4E924214 /* TKPageContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB01A21AFF27B369AD27C4F56DD69A44 /* NSObject+FBKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = B12BD1702408F78DB227BF98AC60DB77 /* NSObject+FBKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6391FFA645EB9B6CF85A29CEFF2B9CA7 /* PBXContainerItemProxy */ = {
+		0AB3F7BE1EEDEFD23D48BE39465BE960 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2568F753F09C4DFFD8770DCC78EDAEAE;
 			remoteInfo = KVOController;
 		};
+		367666994FB828C1AEA1595765DDFE6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2568F753F09C4DFFD8770DCC78EDAEAE;
+			remoteInfo = KVOController;
+		};
+		C57E629E75DDEBD93C767ADA626423AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC4EF6644B34AA91EEC344510ECA3685;
+			remoteInfo = XTracking;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0037405FDC8C1A9C643965103326516A /* XTrackingPage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XTrackingPage.h; path = Source/Page/XTrackingPage.h; sourceTree = "<group>"; };
+		01597BE726251B7E87FF04D0E1F6F530 /* XTracking */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XTracking; path = XTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		073CF85B3425ED780F3C295141FFBFF0 /* UIAlertAction+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertAction+TKActionTracking.m"; path = "Source/Action/UIAlertAction+TKActionTracking.m"; sourceTree = "<group>"; };
+		07C6AF4BC9AFEFF586E6344D895A326C /* TKActionContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKActionContext.m; path = Source/Action/TKActionContext.m; sourceTree = "<group>"; };
+		10D2E6120F8D9EE1D5E314718E139DA6 /* TKActionContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKActionContext.h; path = Source/Action/TKActionContext.h; sourceTree = "<group>"; };
 		18C3212C0404C1E75A9A108D08BC6B09 /* FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBKVOController.h; path = FBKVOController/FBKVOController.h; sourceTree = "<group>"; };
+		1CA8E84AC0D7E38C24C2531DFEFF160D /* TKPageContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKPageContext.m; path = Source/Page/TKPageContext.m; sourceTree = "<group>"; };
 		1D4343B78208103E53595E161160631D /* Pods-XTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTracking.debug.xcconfig"; sourceTree = "<group>"; };
 		1D9F948D71767372BB492EA41C972847 /* KVOController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KVOController-dummy.m"; sourceTree = "<group>"; };
 		1F048B46EE717344AEC2A74F49762B61 /* KVOController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KVOController.release.xcconfig; sourceTree = "<group>"; };
 		1F134B48E3893F923137E0D0A7067023 /* Pods-XTracking-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-XTracking-frameworks.sh"; sourceTree = "<group>"; };
+		211EBAB7C1BE4BE447B0380A0B00B213 /* UITabBarItem+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBarItem+TKActionTracking.m"; path = "Source/Action/UITabBarItem+TKActionTracking.m"; sourceTree = "<group>"; };
+		21ACE470F481D43491189502DE2887D5 /* UIView+TKExposeTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+TKExposeTracking.h"; path = "Source/Expose/UIView+TKExposeTracking.h"; sourceTree = "<group>"; };
 		2A5F7ABB1A60444B4C4E718329012D05 /* Pods-XTracking-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTracking-Info.plist"; sourceTree = "<group>"; };
+		2AC0C14BE88D649F4F3A59C42EA7728E /* UIApplication+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+TKActionTracking.m"; path = "Source/Action/UIApplication+TKActionTracking.m"; sourceTree = "<group>"; };
+		2AD69A99F734D1273220AABD1EA03263 /* UIApplication+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIApplication+TKActionTracking.h"; path = "Source/Action/UIApplication+TKActionTracking.h"; sourceTree = "<group>"; };
 		2D6A23F089722E29194159F3F0FBC427 /* Pods-XTracking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-XTracking.modulemap"; sourceTree = "<group>"; };
+		30D536FDEF54AC47CCF823DB10E77441 /* TKExposeTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKExposeTracking.m; path = Source/Expose/TKExposeTracking.m; sourceTree = "<group>"; };
 		399EC9508E73C0D54D9BBD8741FBA137 /* KVOController */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KVOController; path = KVOController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B5F9079B430D7A989E65F51691C61AC /* XTracking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = XTracking.modulemap; sourceTree = "<group>"; };
 		434ED2DD9D3FAC5E395BD76E6897443B /* Pods-XTracking-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-XTracking-acknowledgements.markdown"; sourceTree = "<group>"; };
+		460284CC9FCB764331FD8706ABAC1CB2 /* TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKActionTracking.m; path = Source/Action/TKActionTracking.m; sourceTree = "<group>"; };
+		4E92EA52A6CCC5CB5C2B7F7BFE8DEA93 /* UIViewController+TKPageTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+TKPageTracking.m"; path = "Source/Page/UIViewController+TKPageTracking.m"; sourceTree = "<group>"; };
+		4F3B016ED2B7C1D236385AA5F3B83846 /* UIGestureRecognizer+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIGestureRecognizer+TKActionTracking.m"; path = "Source/Action/UIGestureRecognizer+TKActionTracking.m"; sourceTree = "<group>"; };
+		5461F506DCC79CBB4130ED7B982595FF /* TKPageTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKPageTracking.h; path = Source/Page/TKPageTracking.h; sourceTree = "<group>"; };
+		567947B04C9B6949AB1118E97FCE819E /* UIView+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+TKActionTracking.m"; path = "Source/Action/UIView+TKActionTracking.m"; sourceTree = "<group>"; };
 		56FCC91E6FB628DBD905FC393CBA689C /* KVOController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVOController-prefix.pch"; sourceTree = "<group>"; };
 		590565EFA674898392EFD7E5E68DD13D /* KVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KVOController.h; path = FBKVOController/KVOController.h; sourceTree = "<group>"; };
 		5D3B744CA423DDB35AA732FB8924B54E /* KVOController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KVOController.debug.xcconfig; sourceTree = "<group>"; };
+		5DE23F9F4A459EA8594C337A141C42BF /* TKExposeContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKExposeContext.h; path = Source/Expose/TKExposeContext.h; sourceTree = "<group>"; };
+		65F83730B1FBDC86EEED8091505D6360 /* TKClassHooker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKClassHooker.m; path = Source/Overall/TKClassHooker.m; sourceTree = "<group>"; };
+		685BC2CF010E002299180B7FAE49067C /* XTracking.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = XTracking.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		69A4CB314A2B2B7E5DC5D13B8A8DC017 /* KVOController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KVOController.modulemap; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6B52A42B570F3EB0A0D95AC48BA1BEFF /* UITabBarItem+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBarItem+TKActionTracking.h"; path = "Source/Action/UITabBarItem+TKActionTracking.h"; sourceTree = "<group>"; };
+		854360C9B0C26C74399463466191190C /* TKActionHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKActionHelper.m; path = Source/Action/TKActionHelper.m; sourceTree = "<group>"; };
+		8E54A2F166A41D73C043302C4D1713AF /* XTracking-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "XTracking-Info.plist"; sourceTree = "<group>"; };
+		9205BED4128754E3664EB8D22763FC53 /* TKActionHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKActionHelper.h; path = Source/Action/TKActionHelper.h; sourceTree = "<group>"; };
 		93A273DAB70F518778B64A6B25E5E7BE /* KVOController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KVOController-Info.plist"; sourceTree = "<group>"; };
+		95A3D5A663701D5F3130E5FE8C4E77AE /* XTrackingExpose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XTrackingExpose.h; path = Source/Expose/XTrackingExpose.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AE72184B36A06963CFADCC9E5DF9BCCD /* TKExposeContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKExposeContext.m; path = Source/Expose/TKExposeContext.m; sourceTree = "<group>"; };
 		AF40517825AAE1A772F5016534D145F5 /* Pods-XTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTracking.release.xcconfig"; sourceTree = "<group>"; };
+		AFAF8D5B31002E9DB7034581B94DE2F4 /* UIBarButtonItem+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+TKActionTracking.h"; path = "Source/Action/UIBarButtonItem+TKActionTracking.h"; sourceTree = "<group>"; };
+		B0E083D5D99C37B079327C81F706D267 /* XTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTracking.debug.xcconfig; sourceTree = "<group>"; };
 		B12BD1702408F78DB227BF98AC60DB77 /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+FBKVOController.h"; path = "FBKVOController/NSObject+FBKVOController.h"; sourceTree = "<group>"; };
+		BA26C38A6B80D2A4D2C44B77FC96E186 /* ITKActionObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ITKActionObject.h; path = Source/Action/ITKActionObject.h; sourceTree = "<group>"; };
 		BADD2B9C4F1AD852A7ADD4355E2BA0DD /* Pods-XTracking */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-XTracking"; path = Pods_XTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB04BE54F6AD22107370DD2B4E924214 /* TKPageContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKPageContext.h; path = Source/Page/TKPageContext.h; sourceTree = "<group>"; };
+		C5B60DA8F51975677367321A32A19322 /* XTracking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "XTracking-dummy.m"; sourceTree = "<group>"; };
+		C72DF7AAB40C46E2B60C009F58BF8BAD /* UIBarButtonItem+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+TKActionTracking.m"; path = "Source/Action/UIBarButtonItem+TKActionTracking.m"; sourceTree = "<group>"; };
 		C8E1A3A5A6D67E7B1670D61DC2B03852 /* FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBKVOController.m; path = FBKVOController/FBKVOController.m; sourceTree = "<group>"; };
+		CD0EDAD8C9D257EF47DA3C1680AB0F64 /* UIGestureRecognizer+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIGestureRecognizer+TKActionTracking.h"; path = "Source/Action/UIGestureRecognizer+TKActionTracking.h"; sourceTree = "<group>"; };
+		CDBF0AD1973E5C1080E1737D59AB4808 /* XTracking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTracking-prefix.pch"; sourceTree = "<group>"; };
 		CDDC517ECFD2C990C68F3E67EA8CF33F /* Pods-XTracking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-XTracking-dummy.m"; sourceTree = "<group>"; };
+		CFE82D14466532E2A245833D1C4C7765 /* TKControllerPageAgent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKControllerPageAgent.m; path = Source/Page/TKControllerPageAgent.m; sourceTree = "<group>"; };
+		D1A80C142B4BF0792D513826918A9D8C /* TKPageTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKPageTracking.m; path = Source/Page/TKPageTracking.m; sourceTree = "<group>"; };
+		D2337D85FE3B182C01FCBA13D28B6053 /* XTracking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = XTracking.release.xcconfig; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D572CFD7373AF7E4DA8DB90E6FA1546D /* TKControllerPageAgent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKControllerPageAgent.h; path = Source/Page/TKControllerPageAgent.h; sourceTree = "<group>"; };
+		D6C716BE4D264DB88E58D19DDA0D1BD1 /* UIView+TKExposeTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+TKExposeTracking.m"; path = "Source/Expose/UIView+TKExposeTracking.m"; sourceTree = "<group>"; };
+		D906CC8FF9DBFAF3AF65E5C5ECF7944D /* XTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XTracking.h; path = Source/XTracking.h; sourceTree = "<group>"; };
 		DA2DDCD06FE07830A05F6215378AD489 /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FBKVOController.m"; path = "FBKVOController/NSObject+FBKVOController.m"; sourceTree = "<group>"; };
+		DB08FD95009C931AFFEAA6763C9A6DAE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E477CF44332BFF4FD39FC10903B1782B /* TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKActionTracking.h; path = Source/Action/TKActionTracking.h; sourceTree = "<group>"; };
+		E4F174D112EE3B92ADBEE471C9E65332 /* TKExposeTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKExposeTracking.h; path = Source/Expose/TKExposeTracking.h; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F05CDBF9737F6A5325E0949C559D96E7 /* KVOController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KVOController-umbrella.h"; sourceTree = "<group>"; };
+		F295B121C3998CCE53769573957A5C90 /* UIView+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+TKActionTracking.h"; path = "Source/Action/UIView+TKActionTracking.h"; sourceTree = "<group>"; };
+		F3F0E9194C268536FCC4E837EA3D9702 /* XTrackingAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = XTrackingAction.h; path = Source/Action/XTrackingAction.h; sourceTree = "<group>"; };
+		F6B5BA69B0AE603A2A8C07E5C220E98B /* UIAlertAction+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertAction+TKActionTracking.h"; path = "Source/Action/UIAlertAction+TKActionTracking.h"; sourceTree = "<group>"; };
+		F86890A2987DF3A0B1624F27B327C966 /* UIViewController+TKPageTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+TKPageTracking.h"; path = "Source/Page/UIViewController+TKPageTracking.h"; sourceTree = "<group>"; };
 		F8ACF83D600F451F891E4FA8759F38E6 /* Pods-XTracking-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-XTracking-acknowledgements.plist"; sourceTree = "<group>"; };
+		FA0A1593337CDA5554D7AF9CC822C616 /* TKClassHooker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKClassHooker.h; path = Source/Overall/TKClassHooker.h; sourceTree = "<group>"; };
+		FD8E1761BA978000045F49C16CB7C5A3 /* XTracking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTracking-umbrella.h"; sourceTree = "<group>"; };
 		FEA184AFF96449F46F019AC28FF733F7 /* Pods-XTracking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-XTracking-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		980783F8A0771F73518C47D751262082 /* Frameworks */ = {
+		4640559EA50F2D290C0B35AD206C8C7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7252322A9777E6B8E3D1A12F8E8378CD /* Foundation.framework in Frameworks */,
+				E719218E236AA7858E6DC1023FC619FF /* Foundation.framework in Frameworks */,
+				23E805D4AB01CEFC9CEE92097373EBFF /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8A4C472D7B374C3EF796220F3D88C6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEF041EBB723C7223FC0CBA2A5912B3F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,13 +194,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B608651161F5460E2F62A7B63F904CA /* Products */ = {
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				399EC9508E73C0D54D9BBD8741FBA137 /* KVOController */,
-				BADD2B9C4F1AD852A7ADD4355E2BA0DD /* Pods-XTracking */,
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AD662CC2CBC305CC23CE1E2EF1C082C /* Overall */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A1593337CDA5554D7AF9CC822C616 /* TKClassHooker.h */,
+				65F83730B1FBDC86EEED8091505D6360 /* TKClassHooker.m */,
+			);
+			name = Overall;
+			sourceTree = "<group>";
+		};
+		2BEB205C9768F636C1AB7AA587F3DC40 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				BA26C38A6B80D2A4D2C44B77FC96E186 /* ITKActionObject.h */,
+				10D2E6120F8D9EE1D5E314718E139DA6 /* TKActionContext.h */,
+				07C6AF4BC9AFEFF586E6344D895A326C /* TKActionContext.m */,
+				9205BED4128754E3664EB8D22763FC53 /* TKActionHelper.h */,
+				854360C9B0C26C74399463466191190C /* TKActionHelper.m */,
+				E477CF44332BFF4FD39FC10903B1782B /* TKActionTracking.h */,
+				460284CC9FCB764331FD8706ABAC1CB2 /* TKActionTracking.m */,
+				F6B5BA69B0AE603A2A8C07E5C220E98B /* UIAlertAction+TKActionTracking.h */,
+				073CF85B3425ED780F3C295141FFBFF0 /* UIAlertAction+TKActionTracking.m */,
+				2AD69A99F734D1273220AABD1EA03263 /* UIApplication+TKActionTracking.h */,
+				2AC0C14BE88D649F4F3A59C42EA7728E /* UIApplication+TKActionTracking.m */,
+				AFAF8D5B31002E9DB7034581B94DE2F4 /* UIBarButtonItem+TKActionTracking.h */,
+				C72DF7AAB40C46E2B60C009F58BF8BAD /* UIBarButtonItem+TKActionTracking.m */,
+				CD0EDAD8C9D257EF47DA3C1680AB0F64 /* UIGestureRecognizer+TKActionTracking.h */,
+				4F3B016ED2B7C1D236385AA5F3B83846 /* UIGestureRecognizer+TKActionTracking.m */,
+				6B52A42B570F3EB0A0D95AC48BA1BEFF /* UITabBarItem+TKActionTracking.h */,
+				211EBAB7C1BE4BE447B0380A0B00B213 /* UITabBarItem+TKActionTracking.m */,
+				F295B121C3998CCE53769573957A5C90 /* UIView+TKActionTracking.h */,
+				567947B04C9B6949AB1118E97FCE819E /* UIView+TKActionTracking.m */,
+				F3F0E9194C268536FCC4E837EA3D9702 /* XTrackingAction.h */,
+			);
+			name = Action;
 			sourceTree = "<group>";
 		};
 		384696D26AF1D0E0EAE6B2BFE1C0D170 /* Targets Support Files */ = {
@@ -95,10 +246,21 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		4C6637AF9197198239277A3205E4287D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				399EC9508E73C0D54D9BBD8741FBA137 /* KVOController */,
+				BADD2B9C4F1AD852A7ADD4355E2BA0DD /* Pods-XTracking */,
+				01597BE726251B7E87FF04D0E1F6F530 /* XTracking */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -117,6 +279,14 @@
 			path = KVOController;
 			sourceTree = "<group>";
 		};
+		7FC250B8EE89B2329C509E3FB3EC6CAA /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC6BA39DDC6723CD45A210C27DF89E4E /* XTracking */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		90B3E3C4B49D1764A271811A672CDC3C /* Pods-XTracking */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +302,22 @@
 			);
 			name = "Pods-XTracking";
 			path = "Target Support Files/Pods-XTracking";
+			sourceTree = "<group>";
+		};
+		949E44F2A2494568D3264C742DC645F7 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				D572CFD7373AF7E4DA8DB90E6FA1546D /* TKControllerPageAgent.h */,
+				CFE82D14466532E2A245833D1C4C7765 /* TKControllerPageAgent.m */,
+				BB04BE54F6AD22107370DD2B4E924214 /* TKPageContext.h */,
+				1CA8E84AC0D7E38C24C2531DFEFF160D /* TKPageContext.m */,
+				5461F506DCC79CBB4130ED7B982595FF /* TKPageTracking.h */,
+				D1A80C142B4BF0792D513826918A9D8C /* TKPageTracking.m */,
+				F86890A2987DF3A0B1624F27B327C966 /* UIViewController+TKPageTracking.h */,
+				4E92EA52A6CCC5CB5C2B7F7BFE8DEA93 /* UIViewController+TKPageTracking.m */,
+				0037405FDC8C1A9C643965103326516A /* XTrackingPage.h */,
+			);
+			name = Page;
 			sourceTree = "<group>";
 		};
 		C8B2A2E6FE36ECBBB1A9D24DEC579F15 /* Support Files */ = {
@@ -153,19 +339,65 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				7FC250B8EE89B2329C509E3FB3EC6CAA /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
 				F37D9E3DF4B7B276818A1977FF720682 /* Pods */,
-				2B608651161F5460E2F62A7B63F904CA /* Products */,
+				4C6637AF9197198239277A3205E4287D /* Products */,
 				384696D26AF1D0E0EAE6B2BFE1C0D170 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		DC6BA39DDC6723CD45A210C27DF89E4E /* XTracking */ = {
 			isa = PBXGroup;
 			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
+				D906CC8FF9DBFAF3AF65E5C5ECF7944D /* XTracking.h */,
+				2BEB205C9768F636C1AB7AA587F3DC40 /* Action */,
+				F360173D9B8AF52AF0FFD515E3BEE0F6 /* Expose */,
+				2AD662CC2CBC305CC23CE1E2EF1C082C /* Overall */,
+				949E44F2A2494568D3264C742DC645F7 /* Page */,
+				E028007508B20154E0CCA16436E7EB5B /* Pod */,
+				F141D5D9E59533C9E794AD27308E93CF /* Support Files */,
 			);
-			name = Frameworks;
+			name = XTracking;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E028007508B20154E0CCA16436E7EB5B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				DB08FD95009C931AFFEAA6763C9A6DAE /* README.md */,
+				685BC2CF010E002299180B7FAE49067C /* XTracking.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F141D5D9E59533C9E794AD27308E93CF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B5F9079B430D7A989E65F51691C61AC /* XTracking.modulemap */,
+				C5B60DA8F51975677367321A32A19322 /* XTracking-dummy.m */,
+				8E54A2F166A41D73C043302C4D1713AF /* XTracking-Info.plist */,
+				CDBF0AD1973E5C1080E1737D59AB4808 /* XTracking-prefix.pch */,
+				FD8E1761BA978000045F49C16CB7C5A3 /* XTracking-umbrella.h */,
+				B0E083D5D99C37B079327C81F706D267 /* XTracking.debug.xcconfig */,
+				D2337D85FE3B182C01FCBA13D28B6053 /* XTracking.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/XTracking";
+			sourceTree = "<group>";
+		};
+		F360173D9B8AF52AF0FFD515E3BEE0F6 /* Expose */ = {
+			isa = PBXGroup;
+			children = (
+				5DE23F9F4A459EA8594C337A141C42BF /* TKExposeContext.h */,
+				AE72184B36A06963CFADCC9E5DF9BCCD /* TKExposeContext.m */,
+				E4F174D112EE3B92ADBEE471C9E65332 /* TKExposeTracking.h */,
+				30D536FDEF54AC47CCF823DB10E77441 /* TKExposeTracking.m */,
+				21ACE470F481D43491189502DE2887D5 /* UIView+TKExposeTracking.h */,
+				D6C716BE4D264DB88E58D19DDA0D1BD1 /* UIView+TKExposeTracking.m */,
+				95A3D5A663701D5F3130E5FE8C4E77AE /* XTrackingExpose.h */,
+			);
+			name = Expose;
 			sourceTree = "<group>";
 		};
 		F37D9E3DF4B7B276818A1977FF720682 /* Pods */ = {
@@ -190,11 +422,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D635A15A380DD3F5990710CC15083C88 /* Headers */ = {
+		7ABB6FCBA61B4EDF2C830E7C6CD68795 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F92C39A68FE66C5222EDB860C60F236 /* Pods-XTracking-umbrella.h in Headers */,
+				9881C16D7C395B4C33EC8B7C16AA1A14 /* Pods-XTracking-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB835EF9A900A88F3904CBC3001EE98F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74BC5006EEA0A5F7BE9CD643CF856871 /* ITKActionObject.h in Headers */,
+				8BC2A7B4D03D982D10EE327F5379ECF0 /* TKActionContext.h in Headers */,
+				109E21569073938F4119AA410C065CD9 /* TKActionHelper.h in Headers */,
+				ECBD3DA237989D95C933B2231C2F4EBA /* TKActionTracking.h in Headers */,
+				C3D5627B1EDB97236B53F5FD9A8AD659 /* TKClassHooker.h in Headers */,
+				6ACD01979CCB33BEA4C138C00C0E88F0 /* TKControllerPageAgent.h in Headers */,
+				B13B22010A687BE956D8047BC4CE7A61 /* TKExposeContext.h in Headers */,
+				4E3522A82CB6F30D48D02AE895E702BB /* TKExposeTracking.h in Headers */,
+				F80997D973AB18030069FDF8E6AC64D7 /* TKPageContext.h in Headers */,
+				4867DEB0263E66E7FB2B8FC92F6E63CE /* TKPageTracking.h in Headers */,
+				1CE5C69625FFD5C4E2693E01876553B3 /* UIAlertAction+TKActionTracking.h in Headers */,
+				4F9888E1C971CF4EDE359CA5953B5A4D /* UIApplication+TKActionTracking.h in Headers */,
+				A49F614896A2D7635BC859F3AA68E5D0 /* UIBarButtonItem+TKActionTracking.h in Headers */,
+				6A2150CA540D7B6FEA197310465FE72E /* UIGestureRecognizer+TKActionTracking.h in Headers */,
+				EE456AB6440C5501BD381B1DBA9F3F63 /* UITabBarItem+TKActionTracking.h in Headers */,
+				E2BB433728C95334C6EC5A65352A229D /* UIView+TKActionTracking.h in Headers */,
+				9189D1238AC482E7F99DF0D0067076C0 /* UIView+TKExposeTracking.h in Headers */,
+				03B26D383878A2F740CC694A491BA2B1 /* UIViewController+TKPageTracking.h in Headers */,
+				01CF3ED4B4F6901A4B4573268A7364B2 /* XTracking.h in Headers */,
+				931182C62787557AE3137D7B81951ABD /* XTracking-umbrella.h in Headers */,
+				019AA62CC23128518A30ADD977B51147 /* XTrackingAction.h in Headers */,
+				B90540E54DBD03FE65FA76C6464566D3 /* XTrackingExpose.h in Headers */,
+				EFC356DA33229A22DF7F58EA44E23949 /* XTrackingPage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,19 +481,39 @@
 			productReference = 399EC9508E73C0D54D9BBD8741FBA137 /* KVOController */;
 			productType = "com.apple.product-type.framework";
 		};
-		FD579C5A1D78584D6F5686DC629338D7 /* Pods-XTracking */ = {
+		EC4EF6644B34AA91EEC344510ECA3685 /* XTracking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 794ACDA9CA19C9A96ED96CF441D675CD /* Build configuration list for PBXNativeTarget "Pods-XTracking" */;
+			buildConfigurationList = 533B5EE7EF5326520A9CB8A3115FBFC0 /* Build configuration list for PBXNativeTarget "XTracking" */;
 			buildPhases = (
-				D635A15A380DD3F5990710CC15083C88 /* Headers */,
-				D7B98F115198C9506FFD5E20F9A346E6 /* Sources */,
-				980783F8A0771F73518C47D751262082 /* Frameworks */,
-				1E797D161341EF3E26D2FCBF925A7DEA /* Resources */,
+				EB835EF9A900A88F3904CBC3001EE98F /* Headers */,
+				6E29C3C46715DC73612E91451C2B2A60 /* Sources */,
+				4640559EA50F2D290C0B35AD206C8C7C /* Frameworks */,
+				DDA0DC9A0B6F1731599E45AED810D87A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AF9EE13E32731FF1FF1ECE231DC9DA15 /* PBXTargetDependency */,
+				BBD075BBC7075C7B9B2AF20BE81F8DAF /* PBXTargetDependency */,
+			);
+			name = XTracking;
+			productName = XTracking;
+			productReference = 01597BE726251B7E87FF04D0E1F6F530 /* XTracking */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD579C5A1D78584D6F5686DC629338D7 /* Pods-XTracking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA304B47E6D13B0AA6D283636CB88097 /* Build configuration list for PBXNativeTarget "Pods-XTracking" */;
+			buildPhases = (
+				7ABB6FCBA61B4EDF2C830E7C6CD68795 /* Headers */,
+				1B7CEE705F2F18054926035E16F619E2 /* Sources */,
+				C8A4C472D7B374C3EF796220F3D88C6D /* Frameworks */,
+				EA666F504620EA1DCFA33617CF10F2D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E9E54CEEB697FF5B003356168FB8475 /* PBXTargetDependency */,
+				EC32E56CB5E133F639C221FA2327956A /* PBXTargetDependency */,
 			);
 			name = "Pods-XTracking";
 			productName = Pods_XTracking;
@@ -256,12 +538,13 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 2B608651161F5460E2F62A7B63F904CA /* Products */;
+			productRefGroup = 4C6637AF9197198239277A3205E4287D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				2568F753F09C4DFFD8770DCC78EDAEAE /* KVOController */,
 				FD579C5A1D78584D6F5686DC629338D7 /* Pods-XTracking */,
+				EC4EF6644B34AA91EEC344510ECA3685 /* XTracking */,
 			);
 		};
 /* End PBXProject section */
@@ -274,7 +557,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1E797D161341EF3E26D2FCBF925A7DEA /* Resources */ = {
+		DDA0DC9A0B6F1731599E45AED810D87A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA666F504620EA1DCFA33617CF10F2D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -284,6 +574,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B7CEE705F2F18054926035E16F619E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47930A3CF4719ADE6567A6410F362771 /* Pods-XTracking-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1C8CC7180305C2F7906791462983E1C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,26 +592,161 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D7B98F115198C9506FFD5E20F9A346E6 /* Sources */ = {
+		6E29C3C46715DC73612E91451C2B2A60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20ED3E84760A3E401C6442425DC8774 /* Pods-XTracking-dummy.m in Sources */,
+				EEEEEEC1D1D4830F87FA82758C302858 /* TKActionContext.m in Sources */,
+				C937818101059F7AE1A6E632379BF99E /* TKActionHelper.m in Sources */,
+				78D80BC471ED603BE1C568CBDCBFA4AC /* TKActionTracking.m in Sources */,
+				097F35BF5249E8FCDB3BFDCA161F50E4 /* TKClassHooker.m in Sources */,
+				62B26018847E419AC4D482C3F97BFF6E /* TKControllerPageAgent.m in Sources */,
+				49B526FBB5AF9784808725A8A849E4BD /* TKExposeContext.m in Sources */,
+				C75AF9DF74C712AE7AC67E079B0D3682 /* TKExposeTracking.m in Sources */,
+				E2E40F9E3E6DC39422199424A0B8B07D /* TKPageContext.m in Sources */,
+				5EA5DB3EC71DDCAB03E32AE85A32F0AE /* TKPageTracking.m in Sources */,
+				08C5289AFDE250963C836A9179469D74 /* UIAlertAction+TKActionTracking.m in Sources */,
+				764D89AB60F374016B611BE5C1F2E920 /* UIApplication+TKActionTracking.m in Sources */,
+				CBACD5ED7CF10F331EF2E2B6FBABFDE5 /* UIBarButtonItem+TKActionTracking.m in Sources */,
+				5430F6C3E859EB14F4B7AC0924F6940F /* UIGestureRecognizer+TKActionTracking.m in Sources */,
+				EC9BF141D855E098AB8C43A80C334727 /* UITabBarItem+TKActionTracking.m in Sources */,
+				3B1544FE5630C4145231FD4C21FD2B9F /* UIView+TKActionTracking.m in Sources */,
+				85236342C68646E764F597955D5756C4 /* UIView+TKExposeTracking.m in Sources */,
+				B19FDF814D3F9F9F5960FF803881F49F /* UIViewController+TKPageTracking.m in Sources */,
+				CE4015B3248A082A8B53F4B3480A6F88 /* XTracking-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AF9EE13E32731FF1FF1ECE231DC9DA15 /* PBXTargetDependency */ = {
+		7E9E54CEEB697FF5B003356168FB8475 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KVOController;
 			target = 2568F753F09C4DFFD8770DCC78EDAEAE /* KVOController */;
-			targetProxy = 6391FFA645EB9B6CF85A29CEFF2B9CA7 /* PBXContainerItemProxy */;
+			targetProxy = 367666994FB828C1AEA1595765DDFE6C /* PBXContainerItemProxy */;
+		};
+		BBD075BBC7075C7B9B2AF20BE81F8DAF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KVOController;
+			target = 2568F753F09C4DFFD8770DCC78EDAEAE /* KVOController */;
+			targetProxy = 0AB3F7BE1EEDEFD23D48BE39465BE960 /* PBXContainerItemProxy */;
+		};
+		EC32E56CB5E133F639C221FA2327956A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XTracking;
+			target = EC4EF6644B34AA91EEC344510ECA3685 /* XTracking */;
+			targetProxy = C57E629E75DDEBD93C767ADA626423AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		03AC987DA0A89BB4669EBEB3DBA5FA34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D4343B78208103E53595E161160631D /* Pods-XTracking.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		06B5AD41B4085F450BABE4B3F79985FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF40517825AAE1A772F5016534D145F5 /* Pods-XTracking.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		06DDADD17DB461A4E6C2AE3A7E398B83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0E083D5D99C37B079327C81F706D267 /* XTracking.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/XTracking/XTracking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XTracking/XTracking-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/XTracking/XTracking.modulemap";
+				PRODUCT_MODULE_NAME = XTracking;
+				PRODUCT_NAME = XTracking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		12CCBD2C8E21F96FCF7D4E76FFCABB10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5D3B744CA423DDB35AA732FB8924B54E /* KVOController.debug.xcconfig */;
@@ -413,42 +846,6 @@
 			};
 			name = Debug;
 		};
-		4E40785AA6217A747D87D5BC92F089F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D4343B78208103E53595E161160631D /* Pods-XTracking.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		7E1C25DDBE7E51A8AD8323D442B298DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F048B46EE717344AEC2A74F49762B61 /* KVOController.release.xcconfig */;
@@ -545,11 +942,10 @@
 			};
 			name = Release;
 		};
-		D6C0B4AA735B040F248233BB100DD494 /* Release */ = {
+		EE1432EA2CD6568AF666330AEB270D02 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF40517825AAE1A772F5016534D145F5 /* Pods-XTracking.release.xcconfig */;
+			baseConfigurationReference = D2337D85FE3B182C01FCBA13D28B6053 /* XTracking.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -558,7 +954,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/XTracking/XTracking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/XTracking/XTracking-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -566,15 +963,12 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-XTracking/Pods-XTracking.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/XTracking/XTracking.modulemap";
+				PRODUCT_MODULE_NAME = XTracking;
+				PRODUCT_NAME = XTracking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -603,11 +997,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		794ACDA9CA19C9A96ED96CF441D675CD /* Build configuration list for PBXNativeTarget "Pods-XTracking" */ = {
+		533B5EE7EF5326520A9CB8A3115FBFC0 /* Build configuration list for PBXNativeTarget "XTracking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4E40785AA6217A747D87D5BC92F089F3 /* Debug */,
-				D6C0B4AA735B040F248233BB100DD494 /* Release */,
+				06DDADD17DB461A4E6C2AE3A7E398B83 /* Debug */,
+				EE1432EA2CD6568AF666330AEB270D02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA304B47E6D13B0AA6D283636CB88097 /* Build configuration list for PBXNativeTarget "Pods-XTracking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03AC987DA0A89BB4669EBEB3DBA5FA34 /* Debug */,
+				06B5AD41B4085F450BABE4B3F79985FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

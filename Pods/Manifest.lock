@@ -1,16 +1,34 @@
 PODS:
   - KVOController (1.2.0)
+  - XTracking (1.0.0):
+    - XTracking/Action (= 1.0.0)
+    - XTracking/Expose (= 1.0.0)
+    - XTracking/Overall (= 1.0.0)
+    - XTracking/Page (= 1.0.0)
+  - XTracking/Action (1.0.0):
+    - XTracking/Overall
+  - XTracking/Expose (1.0.0):
+    - KVOController
+    - XTracking/Overall
+  - XTracking/Overall (1.0.0)
+  - XTracking/Page (1.0.0):
+    - XTracking/Overall
 
 DEPENDENCIES:
-  - KVOController
+  - XTracking (from `XTracking.podspec`)
 
 SPEC REPOS:
   trunk:
     - KVOController
 
+EXTERNAL SOURCES:
+  XTracking:
+    :path: XTracking.podspec
+
 SPEC CHECKSUMS:
   KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+  XTracking: 7d4e5093e5f2cd2a9bb440e2d15241a6d45d70dd
 
-PODFILE CHECKSUM: 8c57841da9c26cfa8f4ca2cb1f92f8c8dbdd5d1b
+PODFILE CHECKSUM: c768321e507becccde2ee6003f5167b89bd7609f
 
 COCOAPODS: 1.11.3

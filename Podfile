@@ -7,6 +7,6 @@ target 'XTracking' do
 
   # Pods for XTracking
   
-  pod 'KVOController'
+  pod 'XTracking', :path => 'XTracking.podspec'
 
 end
