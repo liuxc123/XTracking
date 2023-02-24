@@ -1,5 +1,3 @@
-
-
 #import <UIKit/UIKit.h>
 #import "TKActionContext.h"
 
@@ -10,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef TKActionContext*_Nullable (^TKActionContextProvider)(id<ITKActionObject> _Nonnull actionObject);
 
-@property (nonatomic, strong) TKActionContext * _Nullable tk_actionContext;
+@property (nonatomic, strong) TKActionContext *_Nullable tk_actionContext;
 
 /// action数据的provider，provider优先级高于 "tk_actionContext"。
 /// 如果设置了provider， 将以provider为准， tk_actionContext不再生效。

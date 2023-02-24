@@ -1,5 +1,3 @@
-
-
 #import "TKActionHelper.h"
 #import "TKActionTracking.h"
 #import "UIView+TKActionTracking.h"
@@ -24,10 +22,7 @@
     }
 }
 
-+ (void)setActionContextToObject:(id)object
-                      trackingId:(NSString*_Nullable)trackingId
-                        userData:(id _Nullable)userData {
-    
++ (void)setActionContextToObject:(id)object trackingId:(NSString*_Nullable)trackingId userData:(id _Nullable)userData {
     if (![object conformsToProtocol:@protocol(ITKActionObject)]) {
         return;
     }

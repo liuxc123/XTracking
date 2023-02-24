@@ -1,5 +1,3 @@
-
-
 #ifndef XTrackingAction_h
 #define XTrackingAction_h
 

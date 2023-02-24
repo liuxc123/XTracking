@@ -1,14 +1,11 @@
-
-
 #import <Foundation/Foundation.h>
 #import "TKActionContext.h"
 
 @implementation TKActionContext
 
--(instancetype)initWithTrackingId:(NSString*_Nullable)trackingId
-                         userData:(id _Nullable)userData{
+- (instancetype)initWithTrackingId:(NSString *_Nullable)trackingId userData:(id _Nullable)userData {
     self = [super init];
-    if(self){
+    if (self) {
         self.trackingId = trackingId;
         self.userData = userData;
     }

@@ -1,5 +1,3 @@
-
-
 #import "UIAlertAction+TKActionTracking.h"
 #import "TKClassHooker.h"
 #import "TKActionHelper.h"
@@ -13,7 +11,7 @@
 
 #pragma mark - hook method
 
-+ (instancetype)tk_actionWithTitle:(NSString *)title style:(UIAlertActionStyle)style handler:(void (^)(UIAlertAction * _Nonnull))handler {
++ (instancetype)tk_actionWithTitle:(NSString *)title style:(UIAlertActionStyle)style handler:(void (^)(UIAlertAction *_Nonnull))handler {
     void(^handlerNew)(UIAlertAction *action) = ^(UIAlertAction *action){
         handler ? handler(action) :0;
         [TKActionHelper reportActionObjectIfNeed:action];
@@ -24,14 +22,11 @@
 
 #pragma mark - ITKActionObject
 
-- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId
-                                 userData:(id _Nullable)userData {
-    [TKActionHelper setActionContextToObject:self
-                                  trackingId:(NSString*_Nullable)trackingId
-                                    userData:(id _Nullable)userData];
+- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId userData:(id _Nullable)userData {
+    [TKActionHelper setActionContextToObject:self trackingId:(NSString*_Nullable)trackingId userData:(id _Nullable)userData];
 }
 
-- (void)tk_clearActionContext{
+- (void)tk_clearActionContext {
     [TKActionHelper clearActionContextForObject:self];
 }
 

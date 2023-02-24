@@ -1,5 +1,3 @@
-
-
 #import "UIBarButtonItem+TKActionTracking.h"
 #import <objc/runtime.h>
 
@@ -9,14 +7,11 @@
 
 #pragma mark - ITKActionObject
 
-- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId
-                                 userData:(id _Nullable)userData {
-    [TKActionHelper setActionContextToObject:self
-                                  trackingId:(NSString*_Nullable)trackingId
-                                    userData:(id _Nullable)userData];
+- (void)tk_setActionContextWithTrackingId:(NSString *_Nullable)trackingId userData:(id _Nullable)userData {
+    [TKActionHelper setActionContextToObject:self trackingId:(NSString *_Nullable)trackingId userData:(id _Nullable)userData];
 }
 
-- (void)tk_clearActionContext{
+- (void)tk_clearActionContext {
     [TKActionHelper clearActionContextForObject:self];
 }
 

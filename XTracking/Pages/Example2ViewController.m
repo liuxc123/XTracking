@@ -26,11 +26,18 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.title = @"EmptyView";
-    vc.tk_page = [[TKPageContext alloc] initWithPageId:@"EmptyViewController" userData:@{@"name": @"Empty"}];
-    vc.view.backgroundColor = [UIColor yellowColor];
-    [self.navigationController pushViewController:vc animated:YES];
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.title = @"EmptyView";
+//    vc.tk_page = [[TKPageContext alloc] initWithPageId:@"EmptyViewController" userData:@{@"name": @"Empty"}];
+//    vc.view.backgroundColor = [UIColor yellowColor];
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    alert.tk_page = [[TKPageContext alloc] initWithPageId:@"AlertViewController" userData:@{@"name": @"alert"}];
+    [self presentViewController:alert animated:YES completion:NULL];
 }
 
 @end

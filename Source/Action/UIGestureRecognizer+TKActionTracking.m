@@ -1,5 +1,3 @@
-
-
 #import "UIGestureRecognizer+TKActionTracking.h"
 
 #import "TKActionHelper.h"

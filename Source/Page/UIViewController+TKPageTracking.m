@@ -1,4 +1,5 @@
 #import "UIViewController+TKPageTracking.h"
+#import "TKClassHooker.h"
 #import <objc/runtime.h>
 
 static const void *tk_modalParentControllerKey;
@@ -8,29 +9,22 @@ static const void *tk_modalParentControllerKey;
 + (void)load {
     static dispatch_once_t once_token;
     dispatch_once(&once_token,  ^{
-        SEL originSEL = @selector(viewDidAppear:);
-        SEL newSEL = @selector(tk_viewDidAppear:);
-        Method originMethod = class_getInstanceMethod(self, originSEL);
-        Method newMethod = class_getInstanceMethod(self, newSEL);
-        method_exchangeImplementations(originMethod, newMethod);
+
+        [TKClassHooker exchangeOriginMethod:@selector(viewDidAppear:)
+                                  newMethod:@selector(tk_viewDidAppear:)
+                                     mclass:[UIViewController class]];
         
-        originSEL = @selector(viewDidDisappear:);
-        newSEL = @selector(tk_viewDidDisappear:);
-        originMethod = class_getInstanceMethod(self, originSEL);
-        newMethod = class_getInstanceMethod(self, newSEL);
-        method_exchangeImplementations(originMethod, newMethod);\
-        
-        originSEL = @selector(presentViewController:animated:completion:);
-        newSEL = @selector(tk_presentViewController:animated:completion:);
-        originMethod = class_getInstanceMethod(self, originSEL);
-        newMethod = class_getInstanceMethod(self, newSEL);
-        method_exchangeImplementations(originMethod, newMethod);
-        
-        originSEL = @selector(dismissViewControllerAnimated:completion:);
-        newSEL = @selector(tk_dismissViewControllerAnimated:completion:);
-        originMethod = class_getInstanceMethod(self, originSEL);
-        newMethod = class_getInstanceMethod(self, newSEL);
-        method_exchangeImplementations(originMethod, newMethod);
+        [TKClassHooker exchangeOriginMethod:@selector(viewDidDisappear:)
+                                  newMethod:@selector(tk_viewDidDisappear:)
+                                     mclass:[UIViewController class]];
+
+        [TKClassHooker exchangeOriginMethod:@selector(presentViewController:animated:completion:)
+                                  newMethod:@selector(tk_presentViewController:animated:completion:)
+                                     mclass:[UIViewController class]];
+
+        [TKClassHooker exchangeOriginMethod:@selector(dismissViewControllerAnimated:completion:)
+                                  newMethod:@selector(tk_dismissViewControllerAnimated:completion:)
+                                     mclass:[UIViewController class]];
     });
 }
 
