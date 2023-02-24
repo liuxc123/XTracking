@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *_Nullable trackingId;
 @property (nonatomic, strong) id _Nullable userData;
 
-- (instancetype)initWithTrackingId:(NSString*_Nullable)trackingId userData:(id _Nullable)userData;
+- (instancetype)initWithTrackingId:(NSString *_Nullable)trackingId userData:(id _Nullable)userData;
 
 @end
 

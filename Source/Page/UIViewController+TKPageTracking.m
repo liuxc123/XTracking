@@ -9,7 +9,6 @@ static const void *tk_modalParentControllerKey;
 + (void)load {
     static dispatch_once_t once_token;
     dispatch_once(&once_token,  ^{
-
         [TKClassHooker exchangeOriginMethod:@selector(viewDidAppear:)
                                   newMethod:@selector(tk_viewDidAppear:)
                                      mclass:[UIViewController class]];
