@@ -13,24 +13,24 @@
 
 @implementation TKControllerPageAgent
 
--(instancetype)init{
+- (instancetype)init {
     self = [super init];
-    if(self){
+    if (self) {
         _pageStack = [NSMutableArray new];
     }
     return self;
 }
 
--(void)bindToControllerIfNeed:(UIViewController*)controller{
-    if(self.mode != TKControllerPageModeBindToController){
+- (void)bindToControllerIfNeed:(UIViewController*)controller {
+    if (self.mode != TKControllerPageModeBindToController) {
         return;
     }
-    if(self.topPage != nil){
+    if (self.topPage != nil) {
         //已经绑定过了
         return;
     }
     TKPageContext *page = [TKPageTracking.shared getPageContextFromController:controller];
-    if(page == nil){
+    if (page == nil) {
         //用户不需要对该controller进行跟踪
         return;
     }
@@ -39,11 +39,11 @@
     [_pageStack addObject:page];
 }
 
--(void)push:(TKPageContext*)pageContext{
+- (void)push:(TKPageContext*)pageContext {
     TKPageContext *last = _pageStack.lastObject;
-    if(last){
+    if (last) {
         [self sendExit:last];
-        if(self.mode != TKControllerPageModePushPop){
+        if (self.mode != TKControllerPageModePushPop) {
             [_pageStack removeAllObjects];
         }
     }
@@ -51,50 +51,52 @@
     [_pageStack addObject:pageContext];
 }
 
--(void)pop{
+- (void)pop {
     TKPageContext *page = self.topPage;
-    if(page){
+    if (page) {
         [self sendExit:page];
         [_pageStack removeObject:page];
     }
     page = self.topPage;
-    if(page){
+    if (page) {
         [self sendEntry:page];
     }
 }
 
--(void)appear{
-    if(self.mode != TKControllerPageModeBindToController && !_hasDisappeared){
+- (void)appear {
+    if (self.mode != TKControllerPageModeBindToController && !_hasDisappeared) {
         //防止第一次appear和push重复发送entry事件
         return;
     }
     TKPageContext *page = self.topPage;
-    if(page){
+    if (page) {
         [self sendEntry:page];
     }
 }
 
--(void)disappear{
+- (void)disappear {
     _hasDisappeared = true;
     TKPageContext *page = self.topPage;
-    if(page){
+    if (page) {
         [self sendExit:page];
     }
 }
 
--(TKPageContext*)topPage{
-    if(_pageStack.count == 0){
+- (TKPageContext*)topPage {
+    if (_pageStack.count == 0) {
         return nil;
     }
     return _pageStack.lastObject;
 }
 
--(void)sendEntry:(TKPageContext*)page{
-    [page updatePageEntryTs];
+- (void)sendEntry:(TKPageContext*)page {
+    [page updatePageEntryTimeStamp];
     [[TKPageTracking shared] sendPageEntry:page];
 }
 
--(void)sendExit:(TKPageContext*)page{
+- (void)sendExit:(TKPageContext*)page {
+    [page updatePageExitTimeStamp];
     [[TKPageTracking shared] sendPageExit:page];
 }
+
 @end

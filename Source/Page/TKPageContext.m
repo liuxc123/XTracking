@@ -5,22 +5,25 @@
 
 @implementation TKPageContext
 
--(instancetype)init{
+- (instancetype)init {
     return [super init];
 }
 
--(instancetype)initWithPageId:(NSString*_Nullable)pageId
-                     userData:(id _Nullable)userData{
+- (instancetype)initWithPageId:(NSString*_Nullable)pageId userData:(id _Nullable)userData {
     self = [super init];
-    if(self){
+    if (self) {
         self.pageId = pageId;
         self.userData = userData;
     }
     return self;
 }
 
-- (void)updatePageEntryTs{
-    self.pageEntryTs = @((long long)([[NSDate date] timeIntervalSince1970] * 1000));
+- (void)updatePageEntryTimeStamp {
+    self.pageEntryTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970] * 1000));
+}
+
+- (void)updatePageExitTimeStamp {
+    self.pageExitTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970] * 1000));
 }
 
 @end

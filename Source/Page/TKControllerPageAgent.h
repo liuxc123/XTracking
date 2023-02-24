@@ -1,5 +1,3 @@
-
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TKPageContext.h"
@@ -15,28 +13,28 @@ NS_ASSUME_NONNULL_BEGIN
 /// 2. override模式（mode = TKControllerPageModeOverride），比如H5ViewController，当一个新的page加载时意味着覆盖旧的page，也可以理解为page的栈中永远只有一个
 /// 补充一点，无论哪种情况，当controller收到系统的appear/disapper事件时都应该对当前page发送entry/exit事件
 
-typedef enum TKControllerPageMode{
+typedef enum TKControllerPageMode {
     TKControllerPageModeBindToController = 0,
     TKControllerPageModePushPop = 1,
     TKControllerPageModeOverride = 2
-}TKControllerPageMode;
+} TKControllerPageMode;
 
 @interface TKControllerPageAgent : NSObject
 
-@property(nonatomic,assign) TKControllerPageMode mode;
+@property (nonatomic, assign) TKControllerPageMode mode;
 
-@property(nonatomic,strong,readonly) TKPageContext *_Nullable topPage;
+@property (nonatomic, strong, readonly) TKPageContext *_Nullable topPage;
 
 /// 仅当mode == bindToController时才起作用
--(void)bindToControllerIfNeed:(UIViewController*)controller;
+- (void)bindToControllerIfNeed:(UIViewController *)controller;
 /// 当mode == pushpop或model == override时用户自己管理controller中页面的进入
--(void)push:(TKPageContext*)pageContext;
+- (void)push:(TKPageContext*)pageContext;
 /// 当mode == pushpop时用户自己管理controller中页面的退出
--(void)pop;
+- (void)pop;
 /// controller收到系统的viewWillAppear事件时自动调用
--(void)appear;
+- (void)appear;
 /// controller收到系统的viewWillDisappear事件时自动调用
--(void)disappear;
+- (void)disappear;
 @end
 
 NS_ASSUME_NONNULL_END

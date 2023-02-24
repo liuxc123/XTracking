@@ -1,5 +1,3 @@
-
-
 #ifndef XTrackingPage_h
 #define XTrackingPage_h
 

@@ -1,25 +1,21 @@
-
-
 #import "UIViewController+TKPageTracking.h"
 #import <objc/runtime.h>
 
-
-
 static const void *tk_modalParentControllerKey;
 
-@implementation UIViewController(TKPageTracking)
+@implementation UIViewController (TKPageTracking)
 
-+(void)load{
++ (void)load {
     static dispatch_once_t once_token;
     dispatch_once(&once_token,  ^{
-        SEL originSEL = @selector(viewWillAppear:);
-        SEL newSEL = @selector(tk_viewWillAppear:);
+        SEL originSEL = @selector(viewDidAppear:);
+        SEL newSEL = @selector(tk_viewDidAppear:);
         Method originMethod = class_getInstanceMethod(self, originSEL);
         Method newMethod = class_getInstanceMethod(self, newSEL);
         method_exchangeImplementations(originMethod, newMethod);
         
-        originSEL = @selector(viewWillDisappear:);
-        newSEL = @selector(tk_viewWillDisappear:);
+        originSEL = @selector(viewDidDisappear:);
+        newSEL = @selector(tk_viewDidDisappear:);
         originMethod = class_getInstanceMethod(self, originSEL);
         newMethod = class_getInstanceMethod(self, newSEL);
         method_exchangeImplementations(originMethod, newMethod);\
@@ -38,17 +34,17 @@ static const void *tk_modalParentControllerKey;
     });
 }
 
--(void)tk_viewWillAppear:(BOOL)animated{
-    if(self.tk_pageAgent.mode == TKControllerPageModeBindToController){
+- (void)tk_viewDidAppear:(BOOL)animated {
+    if (self.tk_pageAgent.mode == TKControllerPageModeBindToController) {
         [self.tk_pageAgent bindToControllerIfNeed:self];
     }
     [self.tk_pageAgent appear];
-    [self tk_viewWillAppear:animated];
+    [self tk_viewDidAppear:animated];
 }
 
--(void)tk_viewWillDisappear:(BOOL)animated{
+- (void)tk_viewDidDisappear:(BOOL)animated {
     [self.tk_pageAgent disappear];
-    [self tk_viewWillDisappear:animated];
+    [self tk_viewDidDisappear:animated];
 }
 
 - (TKPageContext *)tk_page {
@@ -59,9 +55,9 @@ static const void *tk_modalParentControllerKey;
     objc_setAssociatedObject(self, @selector(tk_page), tk_page, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (TKControllerPageAgent*)tk_pageAgent{
+- (TKControllerPageAgent *)tk_pageAgent {
     TKControllerPageAgent *agent = objc_getAssociatedObject(self, _cmd);
-    if(agent == nil){
+    if (agent == nil) {
         agent = [TKControllerPageAgent new];
         objc_setAssociatedObject(self, _cmd, agent, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
