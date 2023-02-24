@@ -1,8 +1,5 @@
-
-
 #import <UIKit/UIKit.h>
 #import "TKExposeContext.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,8 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) TKExposeContext *_Nullable tk_exposeContext;
 
 /// 设置曝光数据快捷方法
-- (void)tk_setExposeContextWithTrackingId:(NSString*_Nullable)trackingId
-                                 userData:(id _Nullable)userData;
+- (void)tk_setExposeContextWithTrackingId:(NSString*_Nullable)trackingId userData:(id _Nullable)userData;
 
 /// 清空曝光数据快捷方法
 - (void)tk_clearExposeContext;

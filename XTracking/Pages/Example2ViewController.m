@@ -25,4 +25,12 @@
     self.tk_page = [[TKPageContext alloc] initWithPageId:@"Example2ViewController" userData:@{@"name": @"Example2"}];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.title = @"EmptyView";
+    vc.tk_page = [[TKPageContext alloc] initWithPageId:@"EmptyViewController" userData:@{@"name": @"Empty"}];
+    vc.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 @end

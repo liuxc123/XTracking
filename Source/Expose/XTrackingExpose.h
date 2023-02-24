@@ -1,5 +1,3 @@
-
-
 #ifndef XTrackingExpose_h
 #define XTrackingExpose_h
 

@@ -1,5 +1,3 @@
-
-
 #import <UIKit/UIKit.h>
 #import "TKExposeContext.h"
 
@@ -9,7 +7,7 @@ typedef void (^TKExposeEventHandler)(UIView *view, TKExposeContext *expose, BOOL
 
 @interface TKExposeTracking : NSObject
 
-+(instancetype)shared;
++ (instancetype)shared;
 
 @property (nonatomic, assign, readonly) BOOL isEnabled;
 /// 用户设置，view展示多少以上视为曝光，默认0.5 (0~1, 0为展示即曝光, 1为必须全部展示才视为曝光)
@@ -26,9 +24,7 @@ typedef void (^TKExposeEventHandler)(UIView *view, TKExposeContext *expose, BOOL
 
 - (void)addNeedExposeView:(UIView *)view;
 - (void)ignoreView:(UIView *)view;
-- (void)sendExposeView:(UIView *)view
-         exposeContext:(TKExposeContext*)expose
-        isInBackground:(BOOL)isInBackground;
+- (void)sendExposeView:(UIView *)view exposeContext:(TKExposeContext *)expose isInBackground:(BOOL)isInBackground;
 @end
 
 NS_ASSUME_NONNULL_END

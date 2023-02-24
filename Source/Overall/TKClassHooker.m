@@ -1,5 +1,3 @@
-
-
 #import "TKClassHooker.h"
 #import <objc/runtime.h>
 

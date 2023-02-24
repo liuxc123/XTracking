@@ -1,8 +1,5 @@
-
-
 #import "TKExposeTracking.h"
 #import "UIView+TKExposeTracking.h"
-
 
 @interface TKExposeTracking()
 
@@ -31,7 +28,7 @@
 
 @implementation TKExposeTracking
 
-+(instancetype)shared{
++ (instancetype)shared {
     static TKExposeTracking *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -40,7 +37,7 @@
     return instance;
 }
 
--(instancetype)init{
+- (instancetype)init {
     self = [super init];
     if(self){
         _callbackTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory valueOptions:NSMapTableCopyIn];
@@ -56,7 +53,7 @@
     return self;
 }
 
-- (void)appWillEnterForeground:(NSNotification*)notification{
+- (void)appWillEnterForeground:(NSNotification*)notification {
     self.isInBackground = false;
     // 将lastExposeViews合至currentNeedExposeViews，lastExposeViews清空
     @synchronized (self) {
@@ -82,7 +79,7 @@
 
 - (void)startExposeTracking {
     self.isEnabled = true;
-    if(!_dispalyLink){
+    if (!_dispalyLink) {
         _dispalyLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(fireDisplayLink)];
         [_dispalyLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
         _dispalyLink.paused = false;
@@ -91,7 +88,7 @@
 
 - (void)stopExposeTracking {
     self.isEnabled = false;
-    if(_dispalyLink){
+    if (_dispalyLink) {
         _dispalyLink.paused = true;
         [_dispalyLink invalidate];
         _dispalyLink = nil;
@@ -160,9 +157,7 @@
     }
 }
 
-- (void)sendExposeView:(UIView *)view
-         exposeContext:(TKExposeContext*)exposeContext
-        isInBackground:(BOOL)isInBackground {
+- (void)sendExposeView:(UIView *)view exposeContext:(TKExposeContext *)exposeContext isInBackground:(BOOL)isInBackground {
     NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
     id lifeIndicator;
     while (lifeIndicator = [keyEnum nextObject]) {
