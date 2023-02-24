@@ -12,10 +12,23 @@ NS_ASSUME_NONNULL_BEGIN
 /// 额外数据
 @property (nonatomic, strong) id _Nullable userData;
 
-/// 页面进入时间，不需要用户维护
-@property (nonatomic, strong) NSNumber *_Nullable pageEntryTimeStamp;
 
+/// 统计进入页面时长（退出页面时间戳 - 进入页面时间戳 - 进入后台时长），不需要用户维护
+@property (nonatomic, strong) NSNumber *_Nullable pageEntryDuration;
+/// 统计进入后台时长（进入后台时间戳 - 回到前台时间戳），不需要用户维护
+@property (nonatomic, strong) NSNumber *_Nullable appEndDuration;
+/// 上一次进入后台时间戳，不需要用户维护
+@property (nonatomic, strong) NSNumber *_Nullable appEndTimeStamp;
+/// 页面进入时间戳，不需要用户维护
+@property (nonatomic, strong) NSNumber *_Nullable pageEntryTimeStamp;
+/// 页面退出时间戳，不需要用户维护
 @property (nonatomic, strong) NSNumber *_Nullable pageExitTimeStamp;
+
+- (void)updatePageEntryDuration;
+
+- (void)updateAppEndDuration;
+
+- (void)updateAppEndTimeStamp;
 
 - (void)updatePageEntryTimeStamp;
 

@@ -1,5 +1,6 @@
 #import "UIViewController+TKPageTracking.h"
 #import "TKClassHooker.h"
+#import "TKAppLifecycle.h"
 #import <objc/runtime.h>
 
 static const void *tk_modalParentControllerKey;
@@ -9,6 +10,10 @@ static const void *tk_modalParentControllerKey;
 + (void)load {
     static dispatch_once_t once_token;
     dispatch_once(&once_token,  ^{
+        [TKClassHooker exchangeOriginMethod:@selector(viewDidLoad)
+                                  newMethod:@selector(tk_viewDidLoad)
+                                     mclass:[UIViewController class]];
+        
         [TKClassHooker exchangeOriginMethod:@selector(viewDidAppear:)
                                   newMethod:@selector(tk_viewDidAppear:)
                                      mclass:[UIViewController class]];
@@ -27,6 +32,11 @@ static const void *tk_modalParentControllerKey;
     });
 }
 
+- (void)tk_viewDidLoad {
+    [self tk_viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appLifecycleStateWillChange:) name:kTKAppLifecycleStateWillChangeNotification object:nil];
+}
+
 - (void)tk_viewDidAppear:(BOOL)animated {
     if (self.tk_pageAgent.mode == TKControllerPageModeBindToController) {
         [self.tk_pageAgent bindToControllerIfNeed:self];
@@ -38,6 +48,26 @@ static const void *tk_modalParentControllerKey;
 - (void)tk_viewDidDisappear:(BOOL)animated {
     [self.tk_pageAgent disappear];
     [self tk_viewDidDisappear:animated];
+}
+
+- (void)appLifecycleStateWillChange:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    TKAppLifecycleState newState = [userInfo[kTKAppLifecycleNewStateKey] integerValue];
+    
+    // 应用启动
+    if (newState == TKAppLifecycleStateStart || newState == TKAppLifecycleStateStartPassively) {
+        [self.tk_pageAgent appStart];
+    }
+    
+    // 应用进入后台
+    if (newState == TKAppLifecycleStateEnd) {
+        [self.tk_pageAgent appEnd];
+    }
+    
+    // 退出应用
+    if (newState == TKAppLifecycleStateTerminate) {
+        [self.tk_pageAgent disappear];
+    }
 }
 
 - (TKPageContext *)tk_page {

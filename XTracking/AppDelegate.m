@@ -45,7 +45,12 @@
     [[TKPageTracking shared] registPageEventLifeIndicator:self handler:^(TKPageEvent event, TKPageContext * _Nonnull page) {
         NSString *trackingId = page.pageId; //用户声明的trackingId
         id userData = page.userData; //用户声明的业务数据
+
         NSLog(@"Page Tracking: %@, %@, %@", trackingId, userData, event == TKPageEventEntry ? @"Entry" : @"Exit");
+        if (event == TKPageEventExit) {
+            NSLog(@"进入页面时间戳：%d, 退出页面时间戳: %d", page.pageEntryTimeStamp.intValue, page.pageExitTimeStamp.intValue);
+            NSLog(@"页面浏览时长：%d ,进入后台时间：%d", page.pageEntryDuration.intValue, page.appEndDuration.intValue);
+        }
     }];
     
     // 曝光监控

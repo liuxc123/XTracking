@@ -2,13 +2,15 @@
 
 #import "TKPageTracking.h"
 #import "UIViewController+TKPageTracking.h"
-
+#import "TKAppLifecycle.h"
 
 @interface TKPageTracking()
 
 @property (nonatomic, strong) NSMapTable<id, TKPageEventHandler> *callbackTable;
 
-@property (nonatomic, strong) NSMutableDictionary<NSString*,TKPageContext*> *classToPageDic;
+@property (nonatomic, strong) NSMutableDictionary<NSString*, TKPageContext*> *classToPageDic;
+
+@property (nonatomic, strong) TKAppLifecycle *appLifecycle;
 
 @end
 
@@ -28,6 +30,7 @@
     if (self) {
         _classToPageDic = [NSMutableDictionary new];
         _callbackTable = [NSMapTable mapTableWithKeyOptions:NSMapTableWeakMemory valueOptions:NSMapTableCopyIn];
+        _appLifecycle = [[TKAppLifecycle alloc] init];        
     }
     return self;
 }

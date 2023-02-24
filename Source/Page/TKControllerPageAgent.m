@@ -82,6 +82,20 @@
     }
 }
 
+- (void)appStart {
+    TKPageContext *page = self.topPage;
+    if (page) {
+        [page updateAppEndDuration];
+    }
+}
+
+- (void)appEnd {
+    TKPageContext *page = self.topPage;
+    if (page) {
+        [page updateAppEndTimeStamp];
+    }
+}
+
 - (TKPageContext*)topPage {
     if (_pageStack.count == 0) {
         return nil;
@@ -96,7 +110,16 @@
 
 - (void)sendExit:(TKPageContext*)page {
     [page updatePageExitTimeStamp];
+    [page updatePageEntryDuration];
     [[TKPageTracking shared] sendPageExit:page];
+}
+
+- (void)sendAppStart:(TKPageContext*)page {
+    [page updatePageEntryTimeStamp];
+}
+
+- (void)sendAppEnd:(TKPageContext*)page {
+    [page updatePageEntryTimeStamp];
 }
 
 @end
