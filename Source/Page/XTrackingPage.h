@@ -1,6 +1,7 @@
 #ifndef XTrackingPage_h
 #define XTrackingPage_h
 
+#import "ITKPageObject.h"
 #import "TKPageTracking.h"
 #import "TKPageContext.h"
 #import "TKControllerPageAgent.h"

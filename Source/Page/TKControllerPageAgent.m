@@ -2,6 +2,7 @@
 
 #import "TKControllerPageAgent.h"
 #import "TKPageTracking.h"
+#import "ITKPageObject.h"
 
 @interface TKControllerPageAgent()
 
@@ -96,30 +97,30 @@
     }
 }
 
-- (TKPageContext*)topPage {
+- (TKPageContext *)topPage {
     if (_pageStack.count == 0) {
         return nil;
     }
     return _pageStack.lastObject;
 }
 
-- (void)sendEntry:(TKPageContext*)page {
+- (void)sendEntry:(TKPageContext *)page {
     [page updatePageEntryTimeStamp];
     [[TKPageTracking shared] sendPageEntry:page];
+    if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
+        id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
+        [obj pageEntry:page];
+    }
 }
 
-- (void)sendExit:(TKPageContext*)page {
+- (void)sendExit:(TKPageContext *)page {
     [page updatePageExitTimeStamp];
     [page updatePageEntryDuration];
     [[TKPageTracking shared] sendPageExit:page];
-}
-
-- (void)sendAppStart:(TKPageContext*)page {
-    [page updatePageEntryTimeStamp];
-}
-
-- (void)sendAppEnd:(TKPageContext*)page {
-    [page updatePageEntryTimeStamp];
+    if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
+        id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
+        [obj pageExit:page];
+    }
 }
 
 @end

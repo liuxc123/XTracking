@@ -8,7 +8,7 @@
 #import "Example2ViewController.h"
 #import "XTracking.h"
 
-@interface Example2ViewController ()
+@interface Example2ViewController () <ITKPageObject>
 
 @end
 
@@ -38,6 +38,19 @@
     }]];
     alert.tk_page = [[TKPageContext alloc] initWithPageId:@"AlertViewController" userData:@{@"name": @"alert"}];
     [self presentViewController:alert animated:YES completion:NULL];
+}
+
+- (void)pageEntry:(TKPageContext *)context {
+    NSString *trackingId = context.pageId; //用户声明的trackingId
+    id userData = context.userData; //用户声明的业务数据
+    
+    NSLog(@"Page Entry Tracking 进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.pageEntryDuration.intValue, context.appEndDuration.intValue);
+}
+
+- (void)pageExit:(TKPageContext *)context {
+    NSString *trackingId = context.pageId; //用户声明的trackingId
+    id userData = context.userData; //用户声明的业务数据
+    NSLog(@"Page Exit Tracking 进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.pageEntryDuration.intValue, context.appEndDuration.intValue);
 }
 
 @end

@@ -27,6 +27,8 @@
 #import "UIView+TKExposeTracking.h"
 #import "XTrackingExpose.h"
 #import "TKClassHooker.h"
+#import "ITKPageObject.h"
+#import "TKAppLifecycle.h"
 #import "TKControllerPageAgent.h"
 #import "TKPageContext.h"
 #import "TKPageTracking.h"
