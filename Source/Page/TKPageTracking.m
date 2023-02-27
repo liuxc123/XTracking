@@ -59,6 +59,17 @@
     [_callbackTable setObject:handler forKey:lifeIndicator];
 }
 
+- (void)sendPageLoaded:(TKPageContext *)context {
+    NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
+    id lifeIndicator;
+    while (lifeIndicator = [keyEnum nextObject]) {
+        TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
+        if (handler) {
+            handler(TKPageEventLoaded, context);
+        }
+    }
+}
+
 - (void)sendPageEntry:(TKPageContext *)context {
     NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
     id lifeIndicator;

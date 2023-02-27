@@ -17,11 +17,12 @@
 @implementation ExampleTableViewController
 
 - (void)viewDidLoad {
+    self.tk_page = [[TKPageContext alloc] initWithPageId:@"ExampleTableViewController" userData:@{@"name": @"ExampleTable"}];
+
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.rowHeight = 80;
     self.title = @"XTracking";
-    self.tk_page = [[TKPageContext alloc] initWithPageId:@"ExampleTableViewController" userData:@{@"name": @"ExampleTable"}];
 }
 
 #pragma mark - Table view data source

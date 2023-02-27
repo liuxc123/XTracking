@@ -27,10 +27,13 @@ typedef enum TKControllerPageMode {
 
 /// 仅当mode == bindToController时才起作用
 - (void)bindToControllerIfNeed:(UIViewController *)controller;
+
 /// 当mode == pushpop或model == override时用户自己管理controller中页面的进入
 - (void)push:(TKPageContext*)pageContext;
 /// 当mode == pushpop时用户自己管理controller中页面的退出
 - (void)pop;
+/// controller收到系统的viewDidLoad事件时自动调用
+- (void)loaded;
 /// controller收到系统的viewWillAppear事件时自动调用
 - (void)appear;
 /// controller收到系统的viewWillDisappear事件时自动调用

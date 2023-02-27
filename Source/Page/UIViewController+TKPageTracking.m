@@ -33,7 +33,11 @@ static const void *tk_modalParentControllerKey;
 }
 
 - (void)tk_viewDidLoad {
+    if (self.tk_pageAgent.mode == TKControllerPageModeBindToController) {
+        [self.tk_pageAgent bindToControllerIfNeed:self];
+    }
     [self tk_viewDidLoad];
+    [self.tk_pageAgent loaded];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appLifecycleStateWillChange:) name:kTKAppLifecycleStateWillChangeNotification object:nil];
 }
 

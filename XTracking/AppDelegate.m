@@ -46,7 +46,21 @@
         NSString *trackingId = page.pageId; //用户声明的trackingId
         id userData = page.userData; //用户声明的业务数据
 
-        NSLog(@"Page Tracking: %@, %@, %@", trackingId, userData, event == TKPageEventEntry ? @"Entry" : @"Exit");
+        NSString *eventName;
+        switch (event) {
+            case TKPageEventLoaded:
+                eventName = @"TKPageEventLoaded";
+                break;
+            case TKPageEventEntry:
+                eventName = @"TKPageEventEntry";
+            case TKPageEventExit:
+                eventName = @"TKPageEventExit";
+            default:
+                break;
+        }
+        
+        NSLog(@"Page Tracking: %@, %@, %@", trackingId, userData, eventName);
+
         if (event == TKPageEventExit) {
             NSLog(@"进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", page.pageEntryTimeStamp.intValue, page.pageExitTimeStamp.intValue, page.pageEntryDuration.intValue, page.appEndDuration.intValue);
         }
