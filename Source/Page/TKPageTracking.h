@@ -10,6 +10,7 @@ typedef enum TKPageEvent {
 } TKPageEvent;
 
 typedef void (^TKPageEventHandler)(TKPageEvent event, TKPageContext *page);
+typedef NSDate * _Nullable (^TKPageDateHandler)(void);
 
 @interface TKPageTracking : NSObject
 
@@ -22,12 +23,15 @@ typedef void (^TKPageEventHandler)(TKPageEvent event, TKPageContext *page);
 - (void)registPageEventLifeIndicator:(id)lifeIndicator handler:(TKPageEventHandler)handler;
 /// 最近一次Entry的page
 @property (nonatomic, strong) TKPageContext *_Nullable lastEntryPage;
-
+/// 创建当前时间
+@property (nonatomic, copy) TKPageDateHandler dateHandler;
 
 - (TKPageContext* _Nullable)getPageContextFromController:(UIViewController *)controller;
 - (void)sendPageLoaded:(TKPageContext *)context;
 - (void)sendPageEntry:(TKPageContext *)context;
 - (void)sendPageExit:(TKPageContext *)context;
+
+- (NSDate *)currentDate;
 
 @end
 

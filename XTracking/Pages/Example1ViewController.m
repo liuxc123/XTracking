@@ -88,7 +88,7 @@
     if (self.isReuse) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"cell"] ?: [[Example1UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     } else {
-        NSString *uniqKey = [NSString stringWithFormat:@"%@%@", @(indexPath.row), @([NSDate date].timeIntervalSince1970 * 1000)];
+        NSString *uniqKey = [NSString stringWithFormat:@"%@%@", @(indexPath.row), @([[TKPageTracking shared] currentDate].timeIntervalSince1970 * 1000)];
         cell = [[Example1UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:uniqKey];
     }
     

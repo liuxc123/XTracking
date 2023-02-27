@@ -34,6 +34,11 @@
 
 - (void)setupTracking {
     
+    /// 自定义时间  用于获取服务器时间
+    [TKPageTracking shared].dateHandler = ^NSDate * _Nullable{
+        return [NSDate date];
+    };
+    
     // 事件监控
     [[TKActionTracking shared] registActionEventLifeIndicator:self handler:^(id  _Nonnull sender, TKActionContext * _Nonnull action) {
         NSString *trackingId = action.trackingId; //用户声明的trackingId

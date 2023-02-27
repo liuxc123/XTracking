@@ -92,4 +92,11 @@
     }
 }
 
+- (NSDate *)currentDate {
+    if (self.dateHandler) {
+        return self.dateHandler();
+    }
+    return [NSDate date];
+}
+
 @end

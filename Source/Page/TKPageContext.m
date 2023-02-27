@@ -2,6 +2,7 @@
 
 #import "TKPageContext.h"
 #import "UIViewController+TKPageTracking.h"
+#import "TKPageTracking.h"
 
 @implementation TKPageContext
 
@@ -28,7 +29,7 @@
 
 - (void)updateAppEndDuration {
     // 进入后台时间戳 - 回到前台时间戳
-    NSNumber *currentTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    NSNumber *currentTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
     if (self.appEndTimeStamp && self.appEndTimeStamp != 0) {
         double appEndDuration = self.appEndDuration.doubleValue;
         double currentAppEndTime = currentTimeStamp.doubleValue - self.appEndTimeStamp.doubleValue;
@@ -37,15 +38,15 @@
 }
 
 - (void)updateAppEndTimeStamp {
-    self.appEndTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    self.appEndTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 - (void)updatePageEntryTimeStamp {
-    self.pageEntryTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    self.pageEntryTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 - (void)updatePageExitTimeStamp {
-    self.pageExitTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    self.pageExitTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 @end
