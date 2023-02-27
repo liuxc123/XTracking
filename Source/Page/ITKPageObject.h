@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 代表抽象出来的Page
 @protocol ITKPageObject <NSObject>
 
+- (void)pageLoaded:(TKPageContext *)context;
 - (void)pageEntry:(TKPageContext *)context;
 - (void)pageExit:(TKPageContext *)context;
 

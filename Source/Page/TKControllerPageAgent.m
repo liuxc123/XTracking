@@ -6,9 +6,10 @@
 
 @interface TKControllerPageAgent()
 
-@property(nonatomic,strong) NSMutableArray<TKPageContext*> *pageStack;
-@property(nonatomic,assign) BOOL hasDisappeared;
-@property(nonatomic,weak) UIViewController *bindedController;
+@property (nonatomic, strong) NSMutableArray<TKPageContext*> *pageStack;
+@property (nonatomic, assign) BOOL isLoaded;
+@property (nonatomic, assign) BOOL hasDisappeared;
+@property (nonatomic, weak) UIViewController *bindedController;
 
 @end
 
@@ -64,6 +65,15 @@
     }
 }
 
+- (void)loaded {
+    if (_isLoaded) return;
+    _isLoaded = true;
+    TKPageContext *page = self.topPage;
+    if (page) {
+        [self sendLoaded:page];
+    }
+}
+
 - (void)appear {
     if (self.mode != TKControllerPageModeBindToController && !_hasDisappeared) {
         //防止第一次appear和push重复发送entry事件
@@ -102,6 +112,14 @@
         return nil;
     }
     return _pageStack.lastObject;
+}
+
+- (void)sendLoaded:(TKPageContext *)page {
+    [[TKPageTracking shared] sendPageLoaded:page];
+    if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
+        id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
+        [obj pageLoaded:page];
+    }
 }
 
 - (void)sendEntry:(TKPageContext *)page {

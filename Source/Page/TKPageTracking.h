@@ -3,9 +3,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum TKPageEvent{
-    TKPageEventEntry = 0,
-    TKPageEventExit = 1
+typedef enum TKPageEvent {
+    TKPageEventLoaded = 0,
+    TKPageEventEntry = 1,
+    TKPageEventExit = 2
 } TKPageEvent;
 
 typedef void (^TKPageEventHandler)(TKPageEvent event, TKPageContext *page);
@@ -24,6 +25,7 @@ typedef void (^TKPageEventHandler)(TKPageEvent event, TKPageContext *page);
 
 
 - (TKPageContext* _Nullable)getPageContextFromController:(UIViewController *)controller;
+- (void)sendPageLoaded:(TKPageContext *)context;
 - (void)sendPageEntry:(TKPageContext *)context;
 - (void)sendPageExit:(TKPageContext *)context;
 
