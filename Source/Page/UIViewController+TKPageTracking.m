@@ -70,7 +70,7 @@ static const void *tk_modalParentControllerKey;
     
     // 退出应用
     if (newState == TKAppLifecycleStateTerminate) {
-        [self.tk_pageAgent disappear];
+        [self.tk_pageAgent appTerminate];
     }
 }
 

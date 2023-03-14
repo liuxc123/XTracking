@@ -19,12 +19,12 @@
     return self;
 }
 
-- (void)updatePageEntryDuration {
+- (void)updatePageBrowseDuration {
     // 退出页面时间戳 - 进入页面时间戳 - 进入后台时长
-    double pageExitTimeStamp = self.pageExitTimeStamp.doubleValue;
+    double pageEndTimeStamp = self.pageExitTimeStamp.intValue == 0 ? self.appEndTimeStamp.doubleValue : self.pageExitTimeStamp.doubleValue;
     double pageEntryTimeStamp = self.pageEntryTimeStamp.doubleValue;
     double appEndDuration = self.appEndDuration.doubleValue;
-    self.pageEntryDuration = @(pageExitTimeStamp - pageEntryTimeStamp - appEndDuration);
+    self.pageBrowseDuration = @(pageEndTimeStamp - pageEntryTimeStamp - appEndDuration);
 }
 
 - (void)updateAppEndDuration {
@@ -37,8 +37,16 @@
     }
 }
 
+- (void)updateAppStartTimeStamp {
+    self.appStartTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
+}
+
 - (void)updateAppEndTimeStamp {
     self.appEndTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
+}
+
+- (void)updatePageLoadedTimeStamp {
+    self.pageLoadedTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 - (void)updatePageEntryTimeStamp {

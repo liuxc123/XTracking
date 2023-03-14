@@ -4,9 +4,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef enum TKPageEvent {
-    TKPageEventLoaded = 0,
-    TKPageEventEntry = 1,
-    TKPageEventExit = 2
+    TKPageEventPageLoaded   = 1,
+    TKPageEventPageEntry    = 2,
+    TKPageEventPageExit     = 3,
+    TKPageEventAppStart     = 4,
+    TKPageEventAppEnd       = 5,
+    TKPageEventAppTerminate = 6,
 } TKPageEvent;
 
 typedef void (^TKPageEventHandler)(TKPageEvent event, TKPageContext *page);
@@ -25,11 +28,16 @@ typedef NSDate * _Nullable (^TKPageDateHandler)(void);
 @property (nonatomic, strong) TKPageContext *_Nullable lastEntryPage;
 /// 创建当前时间
 @property (nonatomic, copy) TKPageDateHandler dateHandler;
-
+/// 获取当前上下文
 - (TKPageContext* _Nullable)getPageContextFromController:(UIViewController *)controller;
+
 - (void)sendPageLoaded:(TKPageContext *)context;
 - (void)sendPageEntry:(TKPageContext *)context;
 - (void)sendPageExit:(TKPageContext *)context;
+
+- (void)sendAppStart:(TKPageContext *)context;
+- (void)sendAppEnd:(TKPageContext *)context;
+- (void)sendAppTerminate:(TKPageContext *)context;
 
 - (NSDate *)currentDate;
 

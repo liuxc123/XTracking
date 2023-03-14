@@ -59,13 +59,46 @@
     [_callbackTable setObject:handler forKey:lifeIndicator];
 }
 
+- (void)sendAppStart:(TKPageContext *)context {
+    NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
+    id lifeIndicator;
+    while (lifeIndicator = [keyEnum nextObject]) {
+        TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
+        if (handler) {
+            handler(TKPageEventAppStart, context);
+        }
+    }
+}
+
+- (void)sendAppEnd:(TKPageContext *)context {
+    NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
+    id lifeIndicator;
+    while (lifeIndicator = [keyEnum nextObject]) {
+        TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
+        if (handler) {
+            handler(TKPageEventAppEnd, context);
+        }
+    }
+}
+
+- (void)sendAppTerminate:(TKPageContext *)context {
+    NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
+    id lifeIndicator;
+    while (lifeIndicator = [keyEnum nextObject]) {
+        TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
+        if (handler) {
+            handler(TKPageEventAppTerminate, context);
+        }
+    }
+}
+
 - (void)sendPageLoaded:(TKPageContext *)context {
     NSEnumerator *keyEnum = _callbackTable.keyEnumerator;
     id lifeIndicator;
     while (lifeIndicator = [keyEnum nextObject]) {
         TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
         if (handler) {
-            handler(TKPageEventLoaded, context);
+            handler(TKPageEventPageLoaded, context);
         }
     }
 }
@@ -76,7 +109,7 @@
     while (lifeIndicator = [keyEnum nextObject]) {
         TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
         if (handler) {
-            handler(TKPageEventEntry, context);
+            handler(TKPageEventPageEntry, context);
         }
     }
 }
@@ -87,7 +120,7 @@
     while (lifeIndicator = [keyEnum nextObject]) {
         TKPageEventHandler handler = [_callbackTable objectForKey:lifeIndicator];
         if (handler) {
-            handler(TKPageEventExit, context);
+            handler(TKPageEventPageExit, context);
         }
     }
 }
