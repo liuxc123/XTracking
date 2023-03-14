@@ -33,30 +33,35 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    UIViewController *vc = [[UIViewController alloc] init];
-//    vc.title = @"EmptyView";
-//    vc.tk_page = [[TKPageContext alloc] initWithPageId:@"EmptyViewController" userData:@{@"name": @"Empty"}];
-//    vc.view.backgroundColor = [UIColor yellowColor];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"title" message:@"message" preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    alert.tk_page = [[TKPageContext alloc] initWithPageId:@"AlertViewController" userData:@{@"name": @"alert"}];
-    [self presentViewController:alert animated:YES completion:NULL];
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.title = @"EmptyView";
+    vc.tk_page = [[TKPageContext alloc] initWithPageId:@"EmptyViewController" userData:@{@"name": @"Empty"}];
+    vc.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)appStart:(TKPageContext *)context {
+    NSLog(@"App Start Tracking 进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.appStartTimeStamp.intValue, context.appEndTimeStamp.intValue, context.appEndDuration.intValue, context.pageBrowseDuration.intValue);
+}
+
+- (void)appEnd:(TKPageContext *)context {
+    NSLog(@"App End Tracking 进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.appStartTimeStamp.intValue, context.appEndTimeStamp.intValue, context.appEndDuration.intValue, context.pageBrowseDuration.intValue);
+}
+
+- (void)appTerminate:(TKPageContext *)context {
+    NSLog(@"App Terminate Tracking 进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.appStartTimeStamp.intValue, context.appEndTimeStamp.intValue, context.appEndDuration.intValue, context.pageBrowseDuration.intValue);
 }
 
 - (void)pageLoaded:(TKPageContext *)context {
-    NSLog(@"Page Loaded Tracking 进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.pageEntryDuration.intValue, context.appEndDuration.intValue);
+    NSLog(@"Page Loaded Tracking 进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.appStartTimeStamp.intValue, context.appEndTimeStamp.intValue, context.appEndDuration.intValue, context.pageBrowseDuration.intValue);
 }
 
 - (void)pageEntry:(TKPageContext *)context {
-    NSLog(@"Page Entry Tracking 进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.pageEntryDuration.intValue, context.appEndDuration.intValue);
+    NSLog(@"Page Entry Tracking 进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.appStartTimeStamp.intValue, context.appEndTimeStamp.intValue, context.appEndDuration.intValue, context.pageBrowseDuration.intValue);
 }
 
 - (void)pageExit:(TKPageContext *)context {
-    NSLog(@"Page Exit Tracking 进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.pageEntryDuration.intValue, context.appEndDuration.intValue);
+    NSLog(@"Page Exit Tracking 进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", context.pageEntryTimeStamp.intValue, context.pageExitTimeStamp.intValue, context.appStartTimeStamp.intValue, context.appEndTimeStamp.intValue, context.appEndDuration.intValue, context.pageBrowseDuration.intValue);
 }
 
 @end

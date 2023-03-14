@@ -42,6 +42,8 @@ typedef enum TKControllerPageMode {
 - (void)appStart;
 /// controller收到系统的applicationDidEnterBackground事件时自动调用
 - (void)appEnd;
+/// controller收到系统的applicationWillTerminate事件时自动调用
+- (void)appTerminate;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -2,6 +2,7 @@
 
 #import "TKPageContext.h"
 #import "UIViewController+TKPageTracking.h"
+#import "TKPageTracking.h"
 
 @implementation TKPageContext
 
@@ -18,17 +19,17 @@
     return self;
 }
 
-- (void)updatePageEntryDuration {
+- (void)updatePageBrowseDuration {
     // 退出页面时间戳 - 进入页面时间戳 - 进入后台时长
-    double pageExitTimeStamp = self.pageExitTimeStamp.doubleValue;
+    double pageEndTimeStamp = self.pageExitTimeStamp.intValue == 0 ? self.appEndTimeStamp.doubleValue : self.pageExitTimeStamp.doubleValue;
     double pageEntryTimeStamp = self.pageEntryTimeStamp.doubleValue;
     double appEndDuration = self.appEndDuration.doubleValue;
-    self.pageEntryDuration = @(pageExitTimeStamp - pageEntryTimeStamp - appEndDuration);
+    self.pageBrowseDuration = @(pageEndTimeStamp - pageEntryTimeStamp - appEndDuration);
 }
 
 - (void)updateAppEndDuration {
     // 进入后台时间戳 - 回到前台时间戳
-    NSNumber *currentTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    NSNumber *currentTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
     if (self.appEndTimeStamp && self.appEndTimeStamp != 0) {
         double appEndDuration = self.appEndDuration.doubleValue;
         double currentAppEndTime = currentTimeStamp.doubleValue - self.appEndTimeStamp.doubleValue;
@@ -36,16 +37,36 @@
     }
 }
 
+- (void)clearPageContext {
+    self.pageBrowseDuration = 0;
+    self.appEndDuration = 0;
+    
+    self.appStartTimeStamp = 0;
+    self.appEndTimeStamp = 0;
+    
+    self.pageLoadedTimeStamp = 0;
+    self.pageEntryTimeStamp = 0;
+    self.pageExitTimeStamp = 0;
+}
+
+- (void)updateAppStartTimeStamp {
+    self.appStartTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
+}
+
 - (void)updateAppEndTimeStamp {
-    self.appEndTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    self.appEndTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
+}
+
+- (void)updatePageLoadedTimeStamp {
+    self.pageLoadedTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 - (void)updatePageEntryTimeStamp {
-    self.pageEntryTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    self.pageEntryTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 - (void)updatePageExitTimeStamp {
-    self.pageExitTimeStamp = @((long long)([[NSDate date] timeIntervalSince1970]));
+    self.pageExitTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }
 
 @end

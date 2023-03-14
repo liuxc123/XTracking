@@ -17,7 +17,7 @@
 @implementation ExampleTableViewController
 
 - (void)viewDidLoad {
-    self.tk_page = [[TKPageContext alloc] initWithPageId:@"ExampleTableViewController" userData:@{@"name": @"ExampleTable"}];
+//    self.tk_page = [[TKPageContext alloc] initWithPageId:@"ExampleTableViewController" userData:@{@"name": @"ExampleTable"}];
 
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];

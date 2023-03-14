@@ -44,24 +44,24 @@
 - (void)push:(TKPageContext*)pageContext {
     TKPageContext *last = _pageStack.lastObject;
     if (last) {
-        [self sendExit:last];
+        [self sendPageExit:last];
         if (self.mode != TKControllerPageModePushPop) {
             [_pageStack removeAllObjects];
         }
     }
-    [self sendEntry:pageContext];
+    [self sendPageEntry:pageContext];
     [_pageStack addObject:pageContext];
 }
 
 - (void)pop {
     TKPageContext *page = self.topPage;
     if (page) {
-        [self sendExit:page];
+        [self sendPageExit:page];
         [_pageStack removeObject:page];
     }
     page = self.topPage;
     if (page) {
-        [self sendEntry:page];
+        [self sendPageEntry:page];
     }
 }
 
@@ -70,7 +70,7 @@
     _isLoaded = true;
     TKPageContext *page = self.topPage;
     if (page) {
-        [self sendLoaded:page];
+        [self sendPageLoaded:page];
     }
 }
 
@@ -81,7 +81,7 @@
     }
     TKPageContext *page = self.topPage;
     if (page) {
-        [self sendEntry:page];
+        [self sendPageEntry:page];
     }
 }
 
@@ -89,21 +89,28 @@
     _hasDisappeared = true;
     TKPageContext *page = self.topPage;
     if (page) {
-        [self sendExit:page];
+        [self sendPageExit:page];
     }
 }
 
 - (void)appStart {
     TKPageContext *page = self.topPage;
     if (page) {
-        [page updateAppEndDuration];
+        [self sendAppStart:page];
     }
 }
 
 - (void)appEnd {
     TKPageContext *page = self.topPage;
     if (page) {
-        [page updateAppEndTimeStamp];
+        [self sendAppEnd:page];
+    }
+}
+
+- (void)appTerminate {
+    TKPageContext *page = self.topPage;
+    if (page) {
+        [self sendAppTerminate:page];
     }
 }
 
@@ -114,31 +121,74 @@
     return _pageStack.lastObject;
 }
 
-- (void)sendLoaded:(TKPageContext *)page {
-    [[TKPageTracking shared] sendPageLoaded:page];
+- (void)sendAppStart:(TKPageContext *)page {
+    [page updateAppStartTimeStamp];
+    [page updateAppEndDuration];
+    [[TKPageTracking shared] sendAppStart:page];
     if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
         id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
-        [obj pageLoaded:page];
+        if ([obj respondsToSelector:@selector(appStart:)]) {
+            [obj appStart:page];
+        }
     }
 }
 
-- (void)sendEntry:(TKPageContext *)page {
+- (void)sendAppEnd:(TKPageContext *)page {
+    [page updateAppEndTimeStamp];
+    [page updatePageBrowseDuration];
+    [[TKPageTracking shared] sendAppEnd:page];
+    if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
+        id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
+        if ([obj respondsToSelector:@selector(appEnd:)]) {
+            [obj appEnd:page];
+        }
+    }
+}
+
+- (void)sendAppTerminate:(TKPageContext *)page {
+    [page updateAppEndTimeStamp];
+    [page updatePageBrowseDuration];
+    [[TKPageTracking shared] sendAppTerminate:page];
+    if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
+        id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
+        if ([obj respondsToSelector:@selector(appTerminate:)]) {
+            [obj appTerminate:page];
+        }
+    }
+}
+
+- (void)sendPageLoaded:(TKPageContext *)page {
+    [[TKPageTracking shared] sendPageLoaded:page];
+    if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
+        id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
+        if ([obj respondsToSelector:@selector(pageLoaded:)]) {
+            [obj pageLoaded:page];
+        }
+    }
+}
+
+- (void)sendPageEntry:(TKPageContext *)page {
     [page updatePageEntryTimeStamp];
     [[TKPageTracking shared] sendPageEntry:page];
     if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
         id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
-        [obj pageEntry:page];
+        if ([obj respondsToSelector:@selector(pageEntry:)]) {
+            [obj pageEntry:page];
+        }
     }
 }
 
-- (void)sendExit:(TKPageContext *)page {
+- (void)sendPageExit:(TKPageContext *)page {
     [page updatePageExitTimeStamp];
-    [page updatePageEntryDuration];
+    [page updatePageBrowseDuration];
     [[TKPageTracking shared] sendPageExit:page];
     if ([self.bindedController conformsToProtocol:@protocol(ITKPageObject)]) {
         id<ITKPageObject> obj = (id<ITKPageObject>)self.bindedController;
-        [obj pageExit:page];
+        if ([obj respondsToSelector:@selector(pageExit:)]) {
+            [obj pageExit:page];
+        }
     }
+    [page clearPageContext];
 }
 
 @end

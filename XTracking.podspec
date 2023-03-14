@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'XTracking'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = "本项目可实现UIKit控件的点击 & 曝光自动跟踪功能"
     s.homepage         = 'https://github.com/liuxc123/XTracking'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }

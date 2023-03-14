@@ -95,7 +95,7 @@
 		0328314C0065D8A8BA5353B83F014169 /* UIAlertAction+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertAction+TKActionTracking.h"; path = "Source/Action/UIAlertAction+TKActionTracking.h"; sourceTree = "<group>"; };
 		0859641FEC2F8030F05BA308FDAB52F1 /* XTracking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "XTracking-prefix.pch"; sourceTree = "<group>"; };
 		0C92FC2493116D11BF18CF633445A54F /* TKExposeContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKExposeContext.m; path = Source/Expose/TKExposeContext.m; sourceTree = "<group>"; };
-		0F738750DF070A7F70AFF7ABEAF2ED1F /* XTracking.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = XTracking.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0F738750DF070A7F70AFF7ABEAF2ED1F /* XTracking.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = XTracking.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		18C3212C0404C1E75A9A108D08BC6B09 /* FBKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBKVOController.h; path = FBKVOController/FBKVOController.h; sourceTree = "<group>"; };
 		1D3D917E818BC83FDD0E5859CE9D0E7A /* TKPageContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKPageContext.m; path = Source/Page/TKPageContext.m; sourceTree = "<group>"; };
 		1D4343B78208103E53595E161160631D /* Pods-XTracking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-XTracking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		8DC56F9EC7F7CFCDB0BAD0CE0AF4C28E /* TKClassHooker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKClassHooker.h; path = Source/Overall/TKClassHooker.h; sourceTree = "<group>"; };
 		8EE9AD16337532C4C9BB604EBB4022EF /* TKActionContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKActionContext.h; path = Source/Action/TKActionContext.h; sourceTree = "<group>"; };
 		93A273DAB70F518778B64A6B25E5E7BE /* KVOController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KVOController-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F12DFBE04BB3A5366E307E2907FBA0E /* TKPageTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKPageTracking.m; path = Source/Page/TKPageTracking.m; sourceTree = "<group>"; };
 		A41B07B70941FF842A2672D611490734 /* TKExposeContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TKExposeContext.h; path = Source/Expose/TKExposeContext.h; sourceTree = "<group>"; };
 		A4AAC49C4AC4ECA166B6C618EBE5EB88 /* TKActionHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TKActionHelper.m; path = Source/Action/TKActionHelper.m; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		B9E3C6A91C8EF2E17B71B0C0E7C7D04D /* UIAlertAction+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIAlertAction+TKActionTracking.m"; path = "Source/Action/UIAlertAction+TKActionTracking.m"; sourceTree = "<group>"; };
 		BADD2B9C4F1AD852A7ADD4355E2BA0DD /* Pods-XTracking */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-XTracking"; path = Pods_XTracking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB5F450F0D7662E50572BAFFC482F695 /* UIView+TKExposeTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+TKExposeTracking.h"; path = "Source/Expose/UIView+TKExposeTracking.h"; sourceTree = "<group>"; };
-		C06021E07272EB4DF365221771E1F086 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C06021E07272EB4DF365221771E1F086 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C35B4D100485845502E390FC4BFBE3E8 /* UIView+TKActionTracking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+TKActionTracking.h"; path = "Source/Action/UIView+TKActionTracking.h"; sourceTree = "<group>"; };
 		C8E1A3A5A6D67E7B1670D61DC2B03852 /* FBKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBKVOController.m; path = FBKVOController/FBKVOController.m; sourceTree = "<group>"; };
 		CA9498CD9B5B94BE8270C81B7050BF6C /* UIApplication+TKActionTracking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+TKActionTracking.m"; path = "Source/Action/UIApplication+TKActionTracking.m"; sourceTree = "<group>"; };
@@ -306,7 +306,6 @@
 				DA2DDCD06FE07830A05F6215378AD489 /* NSObject+FBKVOController.m */,
 				C8B2A2E6FE36ECBBB1A9D24DEC579F15 /* Support Files */,
 			);
-			name = KVOController;
 			path = KVOController;
 			sourceTree = "<group>";
 		};

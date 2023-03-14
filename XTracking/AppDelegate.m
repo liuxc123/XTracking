@@ -34,6 +34,11 @@
 
 - (void)setupTracking {
     
+    /// 自定义时间  用于获取服务器时间
+    [TKPageTracking shared].dateHandler = ^NSDate * _Nullable{
+        return [NSDate date];
+    };
+    
     // 事件监控
     [[TKActionTracking shared] registActionEventLifeIndicator:self handler:^(id  _Nonnull sender, TKActionContext * _Nonnull action) {
         NSString *trackingId = action.trackingId; //用户声明的trackingId
@@ -45,25 +50,11 @@
     [[TKPageTracking shared] registPageEventLifeIndicator:self handler:^(TKPageEvent event, TKPageContext * _Nonnull page) {
         NSString *trackingId = page.pageId; //用户声明的trackingId
         id userData = page.userData; //用户声明的业务数据
-
-        NSString *eventName;
-        switch (event) {
-            case TKPageEventLoaded:
-                eventName = @"TKPageEventLoaded";
-                break;
-            case TKPageEventEntry:
-                eventName = @"TKPageEventEntry";
-            case TKPageEventExit:
-                eventName = @"TKPageEventExit";
-            default:
-                break;
-        }
         
-        NSLog(@"Page Tracking: %@, %@, %@", trackingId, userData, eventName);
-
-        if (event == TKPageEventExit) {
-            NSLog(@"进入页面时间戳：%d, 退出页面时间戳: %d, 页面浏览时长：%d ,进入后台时间：%d", page.pageEntryTimeStamp.intValue, page.pageExitTimeStamp.intValue, page.pageEntryDuration.intValue, page.appEndDuration.intValue);
-        }
+        NSLog(@"------------------------------------------------------");
+        NSLog(@"Page Tracking: %@, %@, %u", trackingId, userData, event);
+        NSLog(@"页面监控---进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", page.pageEntryTimeStamp.intValue, page.pageExitTimeStamp.intValue, page.appStartTimeStamp.intValue, page.appEndTimeStamp.intValue, page.appEndDuration.intValue, page.pageBrowseDuration.intValue);
+        NSLog(@"******************************************************");
     }];
     
     // 曝光监控
