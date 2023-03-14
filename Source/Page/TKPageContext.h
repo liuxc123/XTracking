@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 页面退出时间戳，不需要用户维护
 @property (nonatomic, strong) NSNumber *_Nullable pageExitTimeStamp;
 
+- (void)clearPageContext;
+
 - (void)updatePageBrowseDuration;
 
 - (void)updateAppEndDuration;
@@ -41,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)updatePageLoadedTimeStamp;
 
 - (void)updatePageEntryTimeStamp;
+
+- (void)clearPageEntryTimeStamp;
 
 - (void)updatePageExitTimeStamp;
 

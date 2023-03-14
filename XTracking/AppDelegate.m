@@ -48,13 +48,13 @@
     
     // 页面监控
     [[TKPageTracking shared] registPageEventLifeIndicator:self handler:^(TKPageEvent event, TKPageContext * _Nonnull page) {
-//        NSString *trackingId = page.pageId; //用户声明的trackingId
-//        id userData = page.userData; //用户声明的业务数据
-//        
-//        NSLog(@"------------------------------------------------------");
-//        NSLog(@"Page Tracking: %@, %@, %u", trackingId, userData, event);
-//        NSLog(@"页面监控---进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", page.pageEntryTimeStamp.intValue, page.pageExitTimeStamp.intValue, page.appStartTimeStamp.intValue, page.appEndTimeStamp.intValue, page.appEndDuration.intValue, page.pageBrowseDuration.intValue);
-//        NSLog(@"******************************************************");
+        NSString *trackingId = page.pageId; //用户声明的trackingId
+        id userData = page.userData; //用户声明的业务数据
+        
+        NSLog(@"------------------------------------------------------");
+        NSLog(@"Page Tracking: %@, %@, %u", trackingId, userData, event);
+        NSLog(@"页面监控---进入页面时间戳：%d, 退出页面时间戳: %d，进入前台时间戳：%d, 进入后台时间戳：%d, 页面在后台时长：%d, 页面浏览总时长：%d", page.pageEntryTimeStamp.intValue, page.pageExitTimeStamp.intValue, page.appStartTimeStamp.intValue, page.appEndTimeStamp.intValue, page.appEndDuration.intValue, page.pageBrowseDuration.intValue);
+        NSLog(@"******************************************************");
     }];
     
     // 曝光监控

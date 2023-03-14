@@ -37,6 +37,18 @@
     }
 }
 
+- (void)clearPageContext {
+    self.pageBrowseDuration = 0;
+    self.appEndDuration = 0;
+    
+    self.appStartTimeStamp = 0;
+    self.appEndTimeStamp = 0;
+    
+    self.pageLoadedTimeStamp = 0;
+    self.pageEntryTimeStamp = 0;
+    self.pageExitTimeStamp = 0;
+}
+
 - (void)updateAppStartTimeStamp {
     self.appStartTimeStamp = @((long long)([[[TKPageTracking shared] currentDate] timeIntervalSince1970]));
 }

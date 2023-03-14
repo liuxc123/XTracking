@@ -188,6 +188,7 @@
             [obj pageExit:page];
         }
     }
+    [page clearPageContext];
 }
 
 @end
