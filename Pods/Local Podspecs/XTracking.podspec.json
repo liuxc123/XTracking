@@ -1,6 +1,6 @@
 {
   "name": "XTracking",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "summary": "本项目可实现UIKit控件的点击 & 曝光自动跟踪功能",
   "homepage": "https://github.com/liuxc123/XTracking",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/liuxc123/XTracking.git",
-    "tag": "1.0.0"
+    "tag": "1.0.2"
   },
   "platforms": {
     "ios": "9.0"
